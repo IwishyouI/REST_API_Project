@@ -20,6 +20,24 @@ import com.skyapi.weatherforecast.common.Location;
 public class LocationRepositoryTest {
 
 
+    @Autowired
+    private LocationRepository repository;
 
+
+    @Test
+    public void testAddSuccess() {
+
+        Location location = new Location();
+        location.setCode("NYC_USA");
+        location.setCityName("New York City");
+        location.setRegionName("New York");
+        location.setCountryCode("US");
+        location.setCountryName("United states of America");
+        location.setEnabled(true);
+        location.setTrashed(false);
+        Location savedLocation = repository.save(location);
+
+        assertThat(savedLocation.getCode()).isEqualTo("NYC_USA");
+    }
 
 }
