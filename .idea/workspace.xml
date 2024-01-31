@@ -4,18 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="프로젝트 세팅">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location 추가 및 LocationRepository 생성 및 테스트">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="3bff4697-ee9e-4e0f-ad9b-35a9477d74aa" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -44,7 +52,7 @@
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationRepositoryTest.testAddSuccess">
+  <component name="RunManager" selected="JUnit.LocationApiControllerTests.testAddShouldReturn400BadRequest">
     <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
@@ -54,6 +62,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocationApiControllerTests.testAddShouldReturn400BadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
+      <option name="METHOD_NAME" value="testAddShouldReturn400BadRequest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,22 +113,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RealtimeWeatherApiControllerTests.testUpdateShouldReturn400BadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.realtime.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location.realtime" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.realtime.RealtimeWeatherApiControllerTests" />
-      <option name="METHOD_NAME" value="testUpdateShouldReturn400BadRequest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RealtimeWeatherApiControllerTests.testUpdateShouldReturn404NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
@@ -123,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LocationApiControllerTests.testAddShouldReturn400BadRequest" />
         <item itemvalue="JUnit.LocationRepositoryTest.testAddSuccess" />
         <item itemvalue="Application.WeatherApiServiceApplication" />
         <item itemvalue="JUnit.RealtimeWeatherApiControllerTests.testUpdateShouldReturn404NotFound" />
         <item itemvalue="JUnit.RealtimeWeatherApiControllerTests" />
-        <item itemvalue="JUnit.RealtimeWeatherApiControllerTests.testUpdateShouldReturn400BadRequest" />
       </list>
     </recent_temporary>
   </component>
@@ -164,13 +172,22 @@
       <option name="project" value="LOCAL" />
       <updated>1706700522196</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Location 추가 및 LocationRepository 생성 및 테스트">
+      <option name="closed" value="true" />
+      <created>1706701752182</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706701752182</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Location Api를 DTO를 이용해서 수정하는 작업 진행중" />
     <MESSAGE value="Code Refactor 진행" />
     <MESSAGE value="프로젝트 세팅" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 세팅" />
+    <MESSAGE value="Location 추가 및 LocationRepository 생성 및 테스트" />
+    <option name="LAST_COMMIT_MESSAGE" value="Location 추가 및 LocationRepository 생성 및 테스트" />
   </component>
 </project>
