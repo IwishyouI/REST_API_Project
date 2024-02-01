@@ -5,11 +5,10 @@ import com.skyapi.weatherforecast.common.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @Controller
 @RequestMapping("/v1/locations")
@@ -30,6 +29,18 @@ public class LocationApiController {
 
         return ResponseEntity.created(uri).body(addLocation);
     }
+
+    @GetMapping
+    public ResponseEntity<?> listLocation() {
+
+        List<Location> list = service.list();
+        if (list.isEmpty()) {
+           return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(list);
+
+    }
+
 
 
 }

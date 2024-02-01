@@ -40,4 +40,41 @@ public class LocationRepositoryTest {
         assertThat(savedLocation.getCode()).isEqualTo("NYC_USA");
     }
 
+
+    @Test
+    public void LocationListTest() {
+
+
+        Location location = new Location();
+        location.setCode("NYC_USA");
+        location.setCityName("New York City");
+        location.setRegionName("New York");
+        location.setCountryCode("US");
+        location.setCountryName("United states of America");
+        location.setEnabled(true);
+        location.setTrashed(false);
+
+        Location location2 = new Location();
+        location2.setCode("WSC_USA");
+        location2.setCityName("Wasington DC");
+        location2.setRegionName("Wasington");
+        location2.setCountryCode("US");
+        location2.setCountryName("United states of America");
+        location2.setEnabled(true);
+        location2.setTrashed(false);
+
+        List<Location> allLocations = (List<Location>) repository.saveAll(List.of(location, location2));
+
+        assertThat(allLocations.get(1).getCode()).isEqualTo("WSC_USA");
+
+    }
+
+
+    @Test
+    public void testListSuccess() {
+        List<Location> locations = repository.findUntrashed();
+        assertThat(locations).isNotEmpty();
+
+        locations.forEach(System.out::println);
+    }
 }

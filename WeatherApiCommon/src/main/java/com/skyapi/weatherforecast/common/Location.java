@@ -94,4 +94,17 @@ public class Location {
     public void setTrashed(boolean trashed) {
         this.trashed = trashed;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "code='" + code + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", regionName='" + regionName + '\'' +
+                ", countryName='" + countryName + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", enabled=" + enabled +
+                ", trashed=" + trashed +
+                '}';
+    }
 }
