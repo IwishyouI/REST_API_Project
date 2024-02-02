@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location Add 작성 및 LocationApiController 작성 및 그에 대한 테스트 추가 (400 BadRequest)">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location을 List로 받아 올 수 있는 Controller단 작성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
@@ -42,16 +41,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/dlwhd/OneDrive/문서/RestAPI_Project",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dlwhd/OneDrive/문서/RestAPI_Project&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService\src\main\resources" />
@@ -62,7 +61,7 @@
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WeatherApiServiceApplication">
+  <component name="RunManager" selected="JUnit.LocationApiControllerTests.testShouldReturn200OK">
     <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
@@ -76,7 +75,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationApiControllerTests.testListShouldReturn200OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationApiControllerTests.testGetShouldReturn200OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +85,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testListShouldReturn200OK" />
+      <option name="METHOD_NAME" value="testGetShouldReturn200OK" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationApiControllerTests.testListShouldReturn204NoContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationApiControllerTests.testShouldReturn200OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -102,13 +101,29 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testListShouldReturn204NoContent" />
+      <option name="METHOD_NAME" value="testShouldReturn200OK" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationRepositoryTest.LocationListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationApiControllerTests.testShouldReturn404NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
+      <option name="METHOD_NAME" value="testShouldReturn404NotFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocationRepositoryTest.testGetSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -118,23 +133,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationRepositoryTest" />
-      <option name="METHOD_NAME" value="LocationListTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocationRepositoryTest.testListSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationRepositoryTest" />
-      <option name="METHOD_NAME" value="testListSuccess" />
+      <option name="METHOD_NAME" value="testGetSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LocationApiControllerTests.testShouldReturn200OK" />
+        <item itemvalue="JUnit.LocationApiControllerTests.testGetShouldReturn200OK" />
         <item itemvalue="Application.WeatherApiServiceApplication" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testListShouldReturn200OK" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testListShouldReturn204NoContent" />
-        <item itemvalue="JUnit.LocationRepositoryTest.testListSuccess" />
-        <item itemvalue="JUnit.LocationRepositoryTest.LocationListTest" />
+        <item itemvalue="JUnit.LocationRepositoryTest.testGetSuccess" />
+        <item itemvalue="JUnit.LocationApiControllerTests.testShouldReturn404NotFound" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706705667288</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Location을 List로 받아 올 수 있는 Controller단 작성">
+      <option name="closed" value="true" />
+      <created>1706787459075</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706787459075</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,6 +215,18 @@
     <MESSAGE value="프로젝트 세팅" />
     <MESSAGE value="Location 추가 및 LocationRepository 생성 및 테스트" />
     <MESSAGE value="Location Add 작성 및 LocationApiController 작성 및 그에 대한 테스트 추가 (400 BadRequest)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Location Add 작성 및 LocationApiController 작성 및 그에 대한 테스트 추가 (400 BadRequest)" />
+    <MESSAGE value="Location을 List로 받아 올 수 있는 Controller단 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="Location을 List로 받아 올 수 있는 Controller단 작성" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

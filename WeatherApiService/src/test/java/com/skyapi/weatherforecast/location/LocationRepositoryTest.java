@@ -77,4 +77,11 @@ public class LocationRepositoryTest {
 
         locations.forEach(System.out::println);
     }
+
+    @Test
+    public void testGetSuccess() {
+        String code = "NYC_USA";
+        Location location = repository.findByCode(code);
+        assertThat(location.getCode()).isEqualTo("NYC_USA");
+    }
 }

@@ -10,16 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 import java.util.Collections;
 import java.util.List;
 
+import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(LocationApiController.class)
 public class LocationApiControllerTests {
@@ -51,7 +50,7 @@ public class LocationApiControllerTests {
 
 
     @Test
-    public void testListShouldReturn204NoContent() throws Exception{
+    public void testListShouldReturn204NoContent() throws Exception {
 
         Mockito.when(service.list()).thenReturn(Collections.emptyList());
 
@@ -87,6 +86,54 @@ public class LocationApiControllerTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
                 .andDo(print());
+    }
+
+
+    @Test
+    public void testShouldReturn405MethodNotAllowed() throws Exception {
+        String requestURI = END_POINT_PATH + "/ABCDEF";
+
+        mockMvc.perform(post(requestURI))
+                .andExpect(status().isMethodNotAllowed())
+                .andDo(print());
+
+
+    }
+
+    @Test
+    public void testShouldReturn404NotFound() throws Exception {
+        String requestURI = END_POINT_PATH + "/ABCDEF";
+
+        mockMvc.perform(get(requestURI))
+                .andExpect(status().isNotFound())
+                .andDo(print());
+
+
+    }
+
+
+    @Test
+    public void testShouldReturn200OK() throws Exception {
+        String requestURI = END_POINT_PATH + "/NYC_USA";
+
+        Location location = new Location();
+        location.setCode("NYC_USA");
+        location.setCityName("New York City");
+        location.setRegionName("New York");
+        location.setCountryCode("US");
+        location.setCountryName("United states of America");
+        location.setEnabled(true);
+        location.setTrashed(false);
+
+        Mockito.when(service.get("NYC_USA")).thenReturn(location);
+
+        mockMvc.perform(get(requestURI))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json"))
+                .andExpect(jsonPath("$.code",is("NYC_USA")))
+                .andDo(print());
+
+
     }
 
 }
