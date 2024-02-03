@@ -84,4 +84,6 @@ public class LocationRepositoryTest {
         Location location = repository.findByCode(code);
         assertThat(location.getCode()).isEqualTo("NYC_USA");
     }
+
+
 }

@@ -9,14 +9,14 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -39,6 +39,13 @@ public class LocationApiControllerTests {
     public void testAddShouldReturn400BadRequest() throws Exception {
 
         Location location = new Location();
+        location.setCode("NYC_USA");
+        location.setCityName("New York City");
+        location.setRegionName("New York");
+        location.setCountryCode("US");
+        location.setCountryName("United states of America");
+        location.setEnabled(true);
+        location.setTrashed(false);
 
         String bodyContent = mapper.writeValueAsString(location);
 
@@ -130,10 +137,31 @@ public class LocationApiControllerTests {
         mockMvc.perform(get(requestURI))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
-                .andExpect(jsonPath("$.code",is("NYC_USA")))
+                .andExpect(jsonPath("$.code", is("NYC_USA")))
                 .andDo(print());
 
 
+    }
+
+    @Test
+    public void testGetShouldReturn404NotFound() throws Exception, LocationNotFoundException {
+
+        Location location = new Location();
+        location.setCode("ABCDEF");
+        location.setCityName("asdg");
+        location.setRegionName("asdg");
+        location.setCountryCode("ggg");
+        location.setCountryName("afaffa");
+        location.setEnabled(true);
+        location.setTrashed(false);
+
+        Mockito.when(service.update(location)).thenThrow(new LocationNotFoundException("No Such Location Not Found"));
+
+        String bodyContent = mapper.writeValueAsString(location);
+
+        mockMvc.perform(put(END_POINT_PATH).contentType(MediaType.APPLICATION_JSON).content(bodyContent))
+                .andExpect(status().isNotFound())
+                .andDo(print());
     }
 
 }

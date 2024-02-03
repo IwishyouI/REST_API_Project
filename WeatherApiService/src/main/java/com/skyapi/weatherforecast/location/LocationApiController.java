@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class LocationApiController {
 
         List<Location> list = service.list();
         if (list.isEmpty()) {
-           return ResponseEntity.noContent().build();
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(list);
 
@@ -53,5 +54,15 @@ public class LocationApiController {
         return ResponseEntity.ok(location);
     }
 
+    @PutMapping
+    public ResponseEntity<?> updateLocation(@RequestBody @Valid Location location) {
+        try {
+            Location updatedLocation = service.update(location);
+
+            return ResponseEntity.ok(updatedLocation);
+        } catch (LocationNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }
