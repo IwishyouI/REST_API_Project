@@ -196,5 +196,33 @@ public class LocationApiControllerTests {
                 .andExpect(status().isOk())
                 .andDo(print());
     }
+
+
+    @Test
+    public void testDeleteShouldReturn404NotFound() throws Exception {
+        String code = "ACC";
+
+        Mockito.doThrow(LocationNotFoundException.class).when(service).delete(code);
+
+
+        mockMvc.perform(delete(END_POINT_PATH + "/"+ code))
+                .andExpect(status().isNotFound())
+                .andDo(print());
+
+    }
+
+    @Test
+    public void testDeleteShouldReturn204() throws Exception {
+
+        String code = "NYC_USA";
+
+        Mockito.doNothing().when(service).delete(code);
+
+        mockMvc.perform(delete(END_POINT_PATH + "/" + code))
+                .andExpect(status().isNoContent())
+                .andDo(print());
+    }
+
+
 }
 

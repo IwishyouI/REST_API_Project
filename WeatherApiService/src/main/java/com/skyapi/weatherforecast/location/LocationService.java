@@ -53,14 +53,13 @@ public class LocationService {
     }
 
     public void delete(String code) throws LocationNotFoundException {
-
         Location location = repo.findByCode(code);
-
         if (location == null) {
             throw new LocationNotFoundException("No Such Location Not found");
         }
+        repo.trashedByCode(code);
 
-        repo.delete(location);
+
 
     }
 }

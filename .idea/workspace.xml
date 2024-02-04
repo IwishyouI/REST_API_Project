@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location delete 관련 코드 작성 및 테스트">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationRepositoryTest.testDeleteSuccess">
+  <component name="RunManager" selected="JUnit.LocationApiControllerTests.testDeleteShouldReturn204">
     <configuration name="LocationApiControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
@@ -79,7 +77,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationApiControllerTests.testUpdateShouldReturn200OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationApiControllerTests.testDeleteShouldReturn204" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -89,7 +87,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testUpdateShouldReturn200OK" />
+      <option name="METHOD_NAME" value="testDeleteShouldReturn204" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocationApiControllerTests.testDeleteShouldReturn404NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
+      <option name="METHOD_NAME" value="testDeleteShouldReturn404NotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,22 +120,6 @@
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
       <option name="METHOD_NAME" value="testUpdateShouldReturn400BadRequest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocationApiControllerTests.testUpdateShouldReturn404NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testUpdateShouldReturn404NotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LocationApiControllerTests.testDeleteShouldReturn204" />
+        <item itemvalue="JUnit.LocationApiControllerTests.testDeleteShouldReturn404NotFound" />
         <item itemvalue="JUnit.LocationRepositoryTest.testDeleteSuccess" />
         <item itemvalue="JUnit.LocationApiControllerTests" />
         <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn400BadRequest" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn200OK" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn404NotFound" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707009460279</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Location delete 관련 코드 작성 및 테스트">
+      <option name="closed" value="true" />
+      <created>1707013201534</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707013201534</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -238,6 +244,7 @@
     <MESSAGE value="Location을 List로 받아 올 수 있는 Controller단 작성" />
     <MESSAGE value="Location get 관련 코드 작성 및 테스트 코드 작성" />
     <MESSAGE value="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성" />
+    <MESSAGE value="Location delete 관련 코드 작성 및 테스트" />
+    <option name="LAST_COMMIT_MESSAGE" value="Location delete 관련 코드 작성 및 테스트" />
   </component>
 </project>
