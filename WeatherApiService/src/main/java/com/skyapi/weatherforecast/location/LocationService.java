@@ -42,7 +42,7 @@ public class LocationService {
         if (locationInDB == null) {
             throw new LocationNotFoundException("No location found with the given code: " + code);
         }
-
+        locationInDB.setCode(locationInRequest.getCode());
         locationInDB.setCityName(locationInRequest.getCityName());
         locationInDB.setRegionName(locationInRequest.getRegionName());
         locationInDB.setCountryCode(locationInRequest.getCountryCode());

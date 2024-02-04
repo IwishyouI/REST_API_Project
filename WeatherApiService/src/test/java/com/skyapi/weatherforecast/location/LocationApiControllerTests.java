@@ -144,25 +144,57 @@ public class LocationApiControllerTests {
     }
 
     @Test
-    public void testGetShouldReturn404NotFound() throws Exception, LocationNotFoundException {
-
+    public void testUpdateShouldReturn404NotFound() throws Exception {
         Location location = new Location();
         location.setCode("ABCDEF");
-        location.setCityName("asdg");
-        location.setRegionName("asdg");
-        location.setCountryCode("ggg");
-        location.setCountryName("afaffa");
+        location.setCityName("Los Angeles");
+        location.setRegionName("California");
+        location.setCountryCode("US");
+        location.setCountryName("United States of America");
         location.setEnabled(true);
-        location.setTrashed(false);
 
-        Mockito.when(service.update(location)).thenThrow(new LocationNotFoundException("No Such Location Not Found"));
+        Mockito.when(service.update(location)).thenThrow(new LocationNotFoundException("No location found"));
 
         String bodyContent = mapper.writeValueAsString(location);
 
-        mockMvc.perform(put(END_POINT_PATH).contentType(MediaType.APPLICATION_JSON).content(bodyContent))
+        mockMvc.perform(put(END_POINT_PATH).contentType("application/json").content(bodyContent))
                 .andExpect(status().isNotFound())
                 .andDo(print());
     }
 
+
+    @Test
+    public void testUpdateShouldReturn400BadRequest() throws Exception {
+        Location location = new Location();
+        location.setCityName("Los Angeles");
+        location.setRegionName("California");
+        location.setCountryCode("US");
+        location.setCountryName("United States of America");
+        location.setEnabled(true);
+
+        String bodyContent = mapper.writeValueAsString(location);
+
+        mockMvc.perform(put(END_POINT_PATH).contentType("application/json").content(bodyContent))
+                .andExpect(status().isBadRequest())
+                .andDo(print());
+    }
+
+
+    @Test
+    public void testUpdateShouldReturn200OK() throws Exception {
+        Location location = new Location();
+        location.setCode("NYC_USA");
+        location.setCityName("Los Angeles");
+        location.setRegionName("California");
+        location.setCountryCode("US");
+        location.setCountryName("United States of America");
+        location.setEnabled(true);
+
+        String bodyContent = mapper.writeValueAsString(location);
+
+        mockMvc.perform(put(END_POINT_PATH).contentType("application/json").content(bodyContent))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
 }
 

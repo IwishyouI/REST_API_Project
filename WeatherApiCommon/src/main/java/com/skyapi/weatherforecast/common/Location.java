@@ -11,32 +11,40 @@ import com.sun.istack.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "locations")
 public class Location {
 
-
     @Column(length = 12, nullable = false, unique = true)
     @Id
+    @NotBlank
     private String code;
 
-
     @Column(length = 128, nullable = false)
+    @JsonProperty("city_name")
+    @NotBlank
     private String cityName;
 
     @Column(length = 128)
+    @JsonProperty("region_name")
+    @NotNull
     private String regionName;
 
-
     @Column(length = 64, nullable = false)
+    @JsonProperty("country_name")
+    @NotBlank
     private String countryName;
 
     @Column(length = 2, nullable = false)
+    @JsonProperty("country_code")
+    @NotBlank
     private String countryCode;
 
     private boolean enabled;
 
+    @JsonIgnore
     private boolean trashed;
 
     public String getCode() {
@@ -96,15 +104,27 @@ public class Location {
     }
 
     @Override
-    public String toString() {
-        return "Location{" +
-                "code='" + code + '\'' +
-                ", cityName='" + cityName + '\'' +
-                ", regionName='" + regionName + '\'' +
-                ", countryName='" + countryName + '\'' +
-                ", countryCode='" + countryCode + '\'' +
-                ", enabled=" + enabled +
-                ", trashed=" + trashed +
-                '}';
+    public int hashCode() {
+        return Objects.hash(code);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Location other = (Location) obj;
+        return Objects.equals(code, other.code);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Location [code=" + code + ", cityName=" + cityName + ", regionName=" + regionName + ", countryName="
+                + countryName + ", countryCode=" + countryCode + ", enabled=" + enabled + ", trashed=" + trashed + "]";
+    }
+
 }

@@ -4,14 +4,14 @@ package com.skyapi.weatherforecast.location;
 import com.skyapi.weatherforecast.common.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
-@Controller
+
+@RestController
 @RequestMapping("/v1/locations")
 public class LocationApiController {
 
@@ -24,7 +24,7 @@ public class LocationApiController {
     }
 
     @PostMapping
-    public ResponseEntity<Location> addLocation(@RequestBody Location location) {
+    public ResponseEntity<Location> addLocation(@RequestBody @Valid Location location) {
         Location addLocation = service.add(location);
         URI uri = URI.create("/v1/locations/" + location.getCode());
 
