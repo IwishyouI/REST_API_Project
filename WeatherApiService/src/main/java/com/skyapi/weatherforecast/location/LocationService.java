@@ -51,4 +51,16 @@ public class LocationService {
 
         return repo.save(locationInDB);
     }
+
+    public void delete(String code) throws LocationNotFoundException {
+
+        Location location = repo.findByCode(code);
+
+        if (location == null) {
+            throw new LocationNotFoundException("No Such Location Not found");
+        }
+
+        repo.delete(location);
+
+    }
 }

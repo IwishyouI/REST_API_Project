@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location get 관련 코드 작성 및 테스트 코드 작성">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +63,7 @@
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationApiControllerTests">
+  <component name="RunManager" selected="JUnit.LocationRepositoryTest.testDeleteSuccess">
     <configuration name="LocationApiControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
@@ -75,22 +75,6 @@
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocationApiControllerTests.testGetShouldReturn404NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testGetShouldReturn404NotFound" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,13 +127,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LocationRepositoryTest.testDeleteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationRepositoryTest" />
+      <option name="METHOD_NAME" value="testDeleteSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LocationRepositoryTest.testDeleteSuccess" />
         <item itemvalue="JUnit.LocationApiControllerTests" />
         <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn400BadRequest" />
         <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn200OK" />
         <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn404NotFound" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testGetShouldReturn404NotFound" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706882239580</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성">
+      <option name="closed" value="true" />
+      <created>1707009460279</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707009460279</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,6 +237,7 @@
     <MESSAGE value="Location Add 작성 및 LocationApiController 작성 및 그에 대한 테스트 추가 (400 BadRequest)" />
     <MESSAGE value="Location을 List로 받아 올 수 있는 Controller단 작성" />
     <MESSAGE value="Location get 관련 코드 작성 및 테스트 코드 작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="Location get 관련 코드 작성 및 테스트 코드 작성" />
+    <MESSAGE value="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성" />
   </component>
 </project>

@@ -85,5 +85,12 @@ public class LocationRepositoryTest {
         assertThat(location.getCode()).isEqualTo("NYC_USA");
     }
 
+    @Test
+    public void testDeleteSuccess() {
+
+        String code = "NYC_USA";
+        repository.trashedByCode(code);
+
+    }
 
 }
