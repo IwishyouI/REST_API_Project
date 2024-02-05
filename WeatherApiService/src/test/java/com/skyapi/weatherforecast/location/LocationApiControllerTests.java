@@ -212,7 +212,7 @@ public class LocationApiControllerTests {
     }
 
     @Test
-    public void testDeleteShouldReturn204() throws Exception {
+    public void testDeleteShouldReturn204NoContent() throws Exception {
 
         String code = "NYC_USA";
 
