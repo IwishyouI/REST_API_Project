@@ -2,12 +2,12 @@ package com.skyapi.weatherforecast.common;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.istack.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,27 +19,27 @@ public class Location {
 
     @Column(length = 12, nullable = false, unique = true)
     @Id
-    @NotBlank
+    @NotBlank(message = "code munt not be blank")
     private String code;
 
     @Column(length = 128, nullable = false)
     @JsonProperty("city_name")
-    @NotBlank
+    @NotBlank(message = "cityName must not be blank")
     private String cityName;
 
     @Column(length = 128)
     @JsonProperty("region_name")
-    @NotNull
+    @NotNull(message = "regionName must not be null")
     private String regionName;
 
     @Column(length = 64, nullable = false)
     @JsonProperty("country_name")
-    @NotBlank
+    @NotBlank(message = "countryName must not be blank")
     private String countryName;
 
     @Column(length = 2, nullable = false)
     @JsonProperty("country_code")
-    @NotBlank
+    @NotBlank(message = "countryCode must not be blank")
     private String countryCode;
 
     private boolean enabled;
