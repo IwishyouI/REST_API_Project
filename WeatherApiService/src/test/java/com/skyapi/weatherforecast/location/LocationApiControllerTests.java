@@ -223,6 +223,30 @@ public class LocationApiControllerTests {
                 .andDo(print());
     }
 
+    @Test
+    public void testValidateRequestBodyLocationCode() throws Exception {
+
+        Location location = new Location();
+
+//        location.setCode("");
+        location.setCityName("Unjeong");
+        location.setCountryCode("KR");
+        location.setRegionName("Paju");
+        location.setCountryName("Korea");
+        location.setEnabled(true);
+
+        Mockito.when(service.add(location)).thenReturn(location);
+
+        String bodyContent = mapper.writeValueAsString(location);
+
+
+        mockMvc.perform(post(END_POINT_PATH).content(bodyContent).contentType("application/json"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errors[0]",is("code must not be null")))
+                .andDo(print());
+    }
+
+
 
 }
 

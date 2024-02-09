@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Location delete 관련 코드 작성 및 테스트">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="handleMethodArgumentNotValid 작성 완료">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,18 +62,16 @@
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationApiControllerTests.testDeleteShouldReturn204">
-    <configuration name="LocationApiControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.WeatherApiServiceApplication">
+    <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
+          <option name="PATTERN" value="com.skyapi.weatherforecast.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationApiControllerTests.testUpdateShouldReturn400BadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationApiControllerTests.testValidateRequestBodyLocationCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +118,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testUpdateShouldReturn400BadRequest" />
+      <option name="METHOD_NAME" value="testValidateRequestBodyLocationCode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WeatherApiServiceApplication" />
+        <item itemvalue="JUnit.LocationApiControllerTests.testValidateRequestBodyLocationCode" />
         <item itemvalue="JUnit.LocationApiControllerTests.testDeleteShouldReturn204" />
         <item itemvalue="JUnit.LocationApiControllerTests.testDeleteShouldReturn404NotFound" />
         <item itemvalue="JUnit.LocationRepositoryTest.testDeleteSuccess" />
-        <item itemvalue="JUnit.LocationApiControllerTests" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testUpdateShouldReturn400BadRequest" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +231,39 @@
       <option name="project" value="LOCAL" />
       <updated>1707013201534</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Location delete 관련 코드 작성 및 테스트 &#10;1. 204 NoContent&#10;2. 404 NotFound">
+      <option name="closed" value="true" />
+      <created>1707041765043</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707041765043</updated>
+    </task>
+    <task id="LOCAL-00011" summary="GlobalExceptioinHandler 추가 작성 중">
+      <option name="closed" value="true" />
+      <created>1707138645485</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707138645485</updated>
+    </task>
+    <task id="LOCAL-00012" summary="GlobalExceptioinHandler 작성 완료">
+      <option name="closed" value="true" />
+      <created>1707184281664</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707184281664</updated>
+    </task>
+    <task id="LOCAL-00013" summary="handleMethodArgumentNotValid 작성 완료">
+      <option name="closed" value="true" />
+      <created>1707384468121</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707384468121</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -245,6 +276,10 @@
     <MESSAGE value="Location get 관련 코드 작성 및 테스트 코드 작성" />
     <MESSAGE value="Location Update와 관련한 코드 작성 &#10;Controller 테스트 및 서비스 계증 코드 작성" />
     <MESSAGE value="Location delete 관련 코드 작성 및 테스트" />
-    <option name="LAST_COMMIT_MESSAGE" value="Location delete 관련 코드 작성 및 테스트" />
+    <MESSAGE value="Location delete 관련 코드 작성 및 테스트 &#10;1. 204 NoContent&#10;2. 404 NotFound" />
+    <MESSAGE value="GlobalExceptioinHandler 추가 작성 중" />
+    <MESSAGE value="GlobalExceptioinHandler 작성 완료" />
+    <MESSAGE value="handleMethodArgumentNotValid 작성 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="handleMethodArgumentNotValid 작성 완료" />
   </component>
 </project>

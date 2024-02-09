@@ -19,27 +19,28 @@ public class Location {
 
     @Column(length = 12, nullable = false, unique = true)
     @Id
-    @NotBlank(message = "code munt not be blank")
+    @NotNull(message = "code must not be null")
+    @Length(min = 3,max = 12,message = "code must have 3-12 characters" )
     private String code;
 
     @Column(length = 128, nullable = false)
     @JsonProperty("city_name")
-    @NotBlank(message = "cityName must not be blank")
+    @NotNull(message = "cityName must not be null")
     private String cityName;
 
     @Column(length = 128)
     @JsonProperty("region_name")
-    @NotNull(message = "regionName must not be null")
     private String regionName;
 
     @Column(length = 64, nullable = false)
     @JsonProperty("country_name")
-    @NotBlank(message = "countryName must not be blank")
+    @NotNull(message = "countryName must not be null")
     private String countryName;
 
     @Column(length = 2, nullable = false)
     @JsonProperty("country_code")
-    @NotBlank(message = "countryCode must not be blank")
+    @NotNull(message = "countryCode must not be null")
+    @Length(min = 1,max = 2,message = "countryCode must have 1-2 Characters")
     private String countryCode;
 
     private boolean enabled;
