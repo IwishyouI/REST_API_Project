@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Date;
 import java.util.List;
 
+import com.skyapi.weatherforecast.common.RealTimeWeather;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -91,6 +92,32 @@ public class LocationRepositoryTest {
         String code = "NYC_USA";
         repository.trashedByCode(code);
 
+    }
+
+    @Test
+    public void testRealTimeWeatherRepository() {
+
+        Location location = new Location();
+        location.setCode("NYC_USA");
+        location.setCityName("New York City");
+        location.setRegionName("New York");
+        location.setCountryCode("US");
+        location.setCountryName("United states of America");
+        location.setEnabled(true);
+
+        RealTimeWeather realTimeWeather = new RealTimeWeather();
+        realTimeWeather.setHumidity(90);
+        realTimeWeather.setTemperature(23);
+        realTimeWeather.setPrecipitation(45);
+        realTimeWeather.setWindSpeed(30);
+        realTimeWeather.setStatus("Cloudy");
+        realTimeWeather.setLast_updated(new Date());
+
+        location.setRealtimeWeather(realTimeWeather);
+        realTimeWeather.setLocation(location);
+        Location savedLocation = repository.save(location);
+
+        assertThat(savedLocation.getRealtimeWeather().getHumidity()).isEqualTo(90);
     }
 
 }

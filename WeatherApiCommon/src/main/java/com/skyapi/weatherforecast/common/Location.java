@@ -48,6 +48,10 @@ public class Location {
     @JsonIgnore
     private boolean trashed;
 
+    @OneToOne(mappedBy = "location",cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private RealTimeWeather realtimeWeather;
+
     public String getCode() {
         return code;
     }
@@ -121,6 +125,14 @@ public class Location {
         return Objects.equals(code, other.code);
     }
 
+
+    public RealTimeWeather getRealtimeWeather() {
+        return realtimeWeather;
+    }
+
+    public void setRealtimeWeather(RealTimeWeather realtimeWeather) {
+        this.realtimeWeather = realtimeWeather;
+    }
 
     @Override
     public String toString() {
