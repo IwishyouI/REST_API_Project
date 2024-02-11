@@ -52,6 +52,16 @@ public class Location {
     @PrimaryKeyJoinColumn
     private RealTimeWeather realtimeWeather;
 
+    public Location() {
+    }
+
+    public Location(String cityName, String regionName, String countryName, String countryCode) {
+        this.cityName = cityName;
+        this.regionName = regionName;
+        this.countryName = countryName;
+        this.countryCode = countryCode;
+    }
+
     public String getCode() {
         return code;
     }

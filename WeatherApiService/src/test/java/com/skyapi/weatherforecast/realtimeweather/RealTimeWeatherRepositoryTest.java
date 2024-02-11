@@ -12,6 +12,8 @@ import org.springframework.test.annotation.Rollback;
 
 import java.util.Date;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(value = false)
@@ -24,16 +26,20 @@ public class RealTimeWeatherRepositoryTest {
     @Test
     public void createRealTimeWeather() {
 
-        Location location = new Location();
 
-        location.setCode("NYC_USA");
-        location.setCityName("New York City");
-        location.setRegionName("New York");
-        location.setCountryCode("US");
-        location.setCountryName("United states of America");
-        location.setEnabled(true);
+        String locationCode = "NYC_USA";
 
+        RealTimeWeather realTimeWeather = repo.findById(locationCode).get();
 
+        realTimeWeather.setTemperature(-2);
+        realTimeWeather.setHumidity(32);
+        realTimeWeather.setPrecipitation(42);
+        realTimeWeather.setStatus("Snowy");
+        realTimeWeather.setWindSpeed(12);
+        realTimeWeather.setLast_updated(new Date());
+
+        RealTimeWeather updatedRealtimeWeather = repo.save(realTimeWeather);
+        assertThat(updatedRealtimeWeather.getHumidity()).isEqualTo(32);
     }
 
 }
