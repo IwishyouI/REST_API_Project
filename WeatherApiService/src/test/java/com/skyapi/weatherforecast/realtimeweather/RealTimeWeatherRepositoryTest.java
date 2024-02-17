@@ -42,4 +42,19 @@ public class RealTimeWeatherRepositoryTest {
         assertThat(updatedRealtimeWeather.getHumidity()).isEqualTo(32);
     }
 
+
+    @Test
+    public void findByCountryCodeAndCityNameTests() {
+
+        String countryCode = "US";
+        String cityName = "New York City";
+
+        RealTimeWeather byCountryCodeAndCityName = repo.findByCountryCodeAndCityName(countryCode, cityName);
+        System.out.println(byCountryCodeAndCityName.getHumidity());
+//        assertThat(byCountryCodeAndCityName.getLocation().getCountryCode()).isEqualTo(countryCode);
+
+
+    }
+
+
 }
