@@ -1,4 +1,4 @@
-package com.skyapi.weatherforecast.realtime;
+package com.skyapi.weatherforecast;
 
 import javax.servlet.http.HttpServletRequest;
 
