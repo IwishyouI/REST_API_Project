@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealTimeWeatherRepository 관련 테스트 코드 추가 및 IP Address 값 얻어오는 CommonUtility 추가">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealtimeWeatherApiController 및 관련 테스트 코드 작성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/CommonUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/CommonUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealTimeWeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealTimeWeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherApiControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,36 +74,7 @@
       <recent name="com.skyapi.weatherforecast.RestClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnBadRequest">
-    <configuration name="com.skyapi.weatherforecast.RestClient.List.ListLocationsAsJSONString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.RestClient.List.ListLocationsAsJSONString" />
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.RestClient.List.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IP2LocationTests.testInvalidIP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.IP2LocationTests" />
-      <option name="METHOD_NAME" value="testInvalidIP" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK">
     <configuration name="IP2LocationTests.testValidIP1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
@@ -123,6 +91,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.realtimeweather.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.realtimeweather" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherApiControllerTests" />
+      <option name="METHOD_NAME" value="testRealTimeWeatherShouldReturn200OK" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnBadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
@@ -134,6 +118,22 @@
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.realtimeweather" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherApiControllerTests" />
       <option name="METHOD_NAME" value="testRealTimeWeatherShouldReturnBadRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.realtimeweather.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.realtimeweather" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherApiControllerTests" />
+      <option name="METHOD_NAME" value="testRealTimeWeatherShouldReturnNotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,19 +156,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.com.skyapi.weatherforecast.RestClient.List.ListLocationsAsJSONString" />
+      <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK" />
+      <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnNotFound" />
       <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnBadRequest" />
       <item itemvalue="JUnit.RealTimeWeatherRepositoryTest.findByCountryCodeAndCityNameTests" />
-      <item itemvalue="JUnit.IP2LocationTests.testInvalidIP" />
       <item itemvalue="JUnit.IP2LocationTests.testValidIP1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK" />
+        <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnNotFound" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnBadRequest" />
         <item itemvalue="JUnit.RealTimeWeatherRepositoryTest.findByCountryCodeAndCityNameTests" />
         <item itemvalue="JUnit.IP2LocationTests.testValidIP1" />
-        <item itemvalue="JUnit.IP2LocationTests.testInvalidIP" />
-        <item itemvalue="Application.com.skyapi.weatherforecast.RestClient.List.ListLocationsAsJSONString" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708172744457</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="RealtimeWeatherApiController 및 관련 테스트 코드 작성">
+      <option name="closed" value="true" />
+      <created>1708236360672</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1708236360672</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -356,6 +364,7 @@
     <MESSAGE value="RestTemplate으로 ListLocations 작동하는지 관련 코드 작성" />
     <MESSAGE value="IP2Location Test 관련 추가" />
     <MESSAGE value="RealTimeWeatherRepository 관련 테스트 코드 추가 및 IP Address 값 얻어오는 CommonUtility 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="RealTimeWeatherRepository 관련 테스트 코드 추가 및 IP Address 값 얻어오는 CommonUtility 추가" />
+    <MESSAGE value="RealtimeWeatherApiController 및 관련 테스트 코드 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="RealtimeWeatherApiController 및 관련 테스트 코드 작성" />
   </component>
 </project>
