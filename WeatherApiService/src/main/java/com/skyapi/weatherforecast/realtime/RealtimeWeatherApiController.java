@@ -7,9 +7,11 @@ import com.skyapi.weatherforecast.GeolocationService;
 import com.skyapi.weatherforecast.common.Location;
 import com.skyapi.weatherforecast.common.RealTimeWeather;
 import com.skyapi.weatherforecast.location.LocationNotFoundException;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,11 +27,14 @@ public class RealtimeWeatherApiController {
 
     private RealTimeWeatherService realTimeWeatherService;
 
-    public RealtimeWeatherApiController(GeolocationService locationService, RealTimeWeatherService realTimeWeatherService) {
+    private ModelMapper modelMapper;
+
+
+    public RealtimeWeatherApiController(GeolocationService locationService, RealTimeWeatherService realTimeWeatherService, ModelMapper modelMapper) {
         this.locationService = locationService;
         this.realTimeWeatherService = realTimeWeatherService;
+        this.modelMapper = modelMapper;
     }
-
 
     @GetMapping
     public ResponseEntity<?> getRealtimeWeatherByIPAddress(HttpServletRequest request) {

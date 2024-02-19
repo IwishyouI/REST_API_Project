@@ -89,7 +89,7 @@ public class RealTimeWeatherApiControllerTests {
         realTimeWeather.setPrecipitation(42);
         realTimeWeather.setStatus("Snowy");
         realTimeWeather.setWindSpeed(12);
-        realTimeWeather.setLast_updated(new Date());
+        realTimeWeather.setLastUpdated(new Date());
         realTimeWeather.setLocation(location);
 
 

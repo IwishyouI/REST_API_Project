@@ -111,7 +111,7 @@ public class LocationRepositoryTest {
         realTimeWeather.setPrecipitation(45);
         realTimeWeather.setWindSpeed(30);
         realTimeWeather.setStatus("Cloudy");
-        realTimeWeather.setLast_updated(new Date());
+        realTimeWeather.setLastUpdated(new Date());
 
         location.setRealtimeWeather(realTimeWeather);
         realTimeWeather.setLocation(location);

@@ -36,7 +36,7 @@ public class RealTimeWeatherRepositoryTest {
         realTimeWeather.setPrecipitation(42);
         realTimeWeather.setStatus("Snowy");
         realTimeWeather.setWindSpeed(12);
-        realTimeWeather.setLast_updated(new Date());
+        realTimeWeather.setLastUpdated(new Date());
 
         RealTimeWeather updatedRealtimeWeather = repo.save(realTimeWeather);
         assertThat(updatedRealtimeWeather.getHumidity()).isEqualTo(32);
