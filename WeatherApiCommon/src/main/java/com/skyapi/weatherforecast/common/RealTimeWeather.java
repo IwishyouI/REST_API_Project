@@ -1,6 +1,7 @@
 package com.skyapi.weatherforecast.common;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -27,6 +28,7 @@ public class RealTimeWeather {
     private int windSpeed;
 
     @JsonProperty("last_updated")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private Date lastUpdated;
 
 

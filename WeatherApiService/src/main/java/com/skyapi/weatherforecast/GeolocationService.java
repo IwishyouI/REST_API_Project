@@ -37,6 +37,8 @@ public class GeolocationService {
             if(!"OK".equals(result.getStatus())) {
                 throw new GeolocationException("Geolocation failed with status:" + result.getStatus());
             }
+
+            LOGGER.info(result.toString());
             return new Location(result.getCity(), result.getRegion(), result.getCountryLong(),result.getCountryShort());
         } catch (IOException ex) {
             throw new GeolocationException("Error querying IP database", ex);

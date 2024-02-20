@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealTimeWeatherDTO 작성">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealTimeWeatherDTO 작성 및 &#10;RealtimeWeatherApiController 테스트 시 location이 DTO로 나오는것 확인">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GeolocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GeolocationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
       <recent name="com.skyapi.weatherforecast.RestClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK">
+  <component name="RunManager" selected="Application.WeatherApiServiceApplication">
     <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
@@ -163,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK" />
         <item itemvalue="Application.WeatherApiServiceApplication" />
+        <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnNotFound" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnBadRequest" />
         <item itemvalue="JUnit.RealTimeWeatherRepositoryTest.findByCountryCodeAndCityNameTests" />
@@ -356,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708344949542</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="RealTimeWeatherDTO 작성 및 &#10;RealtimeWeatherApiController 테스트 시 location이 DTO로 나오는것 확인">
+      <option name="closed" value="true" />
+      <created>1708404689151</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708404689151</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -382,6 +389,7 @@
     <MESSAGE value="RealtimeWeatherApiController 및 관련 테스트 코드 작성" />
     <MESSAGE value="RealtimeWeatherApiController 관련 테스트 코드 200 , 404 , 400 작성" />
     <MESSAGE value="RealTimeWeatherDTO 작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="RealTimeWeatherDTO 작성" />
+    <MESSAGE value="RealTimeWeatherDTO 작성 및 &#10;RealtimeWeatherApiController 테스트 시 location이 DTO로 나오는것 확인" />
+    <option name="LAST_COMMIT_MESSAGE" value="RealTimeWeatherDTO 작성 및 &#10;RealtimeWeatherApiController 테스트 시 location이 DTO로 나오는것 확인" />
   </component>
 </project>
