@@ -43,9 +43,9 @@ public class RealtimeWeatherApiController {
 
         try {
             Location locationFromIP = locationService.getLocation(ipAddress);
-            RealTimeWeather byLocation = realTimeWeatherService.getByLocation(locationFromIP);
-
-            return ResponseEntity.ok(byLocation);
+            RealTimeWeather realTimeWeather = realTimeWeatherService.getByLocation(locationFromIP);
+            RealTimeWeatherDTO dto = modelMapper.map(realTimeWeather, RealTimeWeatherDTO.class);
+            return ResponseEntity.ok(dto);
         } catch (GeolocationException e) {
             LOGGER.error(e.getMessage(),e);
             return ResponseEntity.badRequest().build();

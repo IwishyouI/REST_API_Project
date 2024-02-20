@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealtimeWeatherApiController 관련 테스트 코드 200 , 404 , 400 작성">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealTimeWeatherDTO 작성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherApiControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <recent name="com.skyapi.weatherforecast.RestClient" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WeatherApiServiceApplication">
+  <component name="RunManager" selected="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK">
     <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
@@ -167,8 +163,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WeatherApiServiceApplication" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturn200OK" />
+        <item itemvalue="Application.WeatherApiServiceApplication" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnNotFound" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testRealTimeWeatherShouldReturnBadRequest" />
         <item itemvalue="JUnit.RealTimeWeatherRepositoryTest.findByCountryCodeAndCityNameTests" />
@@ -352,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708251110582</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="RealTimeWeatherDTO 작성">
+      <option name="closed" value="true" />
+      <created>1708344949542</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708344949542</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -377,6 +381,7 @@
     <MESSAGE value="RealTimeWeatherRepository 관련 테스트 코드 추가 및 IP Address 값 얻어오는 CommonUtility 추가" />
     <MESSAGE value="RealtimeWeatherApiController 및 관련 테스트 코드 작성" />
     <MESSAGE value="RealtimeWeatherApiController 관련 테스트 코드 200 , 404 , 400 작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="RealtimeWeatherApiController 관련 테스트 코드 200 , 404 , 400 작성" />
+    <MESSAGE value="RealTimeWeatherDTO 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="RealTimeWeatherDTO 작성" />
   </component>
 </project>
