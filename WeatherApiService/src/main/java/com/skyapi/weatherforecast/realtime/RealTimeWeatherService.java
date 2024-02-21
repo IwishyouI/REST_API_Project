@@ -6,12 +6,15 @@ import com.skyapi.weatherforecast.location.LocationNotFoundException;
 import com.skyapi.weatherforecast.location.LocationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 
 @Service
 public class RealTimeWeatherService {
 
 
     private RealTimeWeatherRepository RealtimeWeatherRepo;
+    private LocationRepository locationRepo;
 
     public RealTimeWeatherService(RealTimeWeatherRepository RealtimeWeatherRepo) {
         this.RealtimeWeatherRepo = RealtimeWeatherRepo;
@@ -40,6 +43,19 @@ public class RealTimeWeatherService {
             throw new LocationNotFoundException("No location found with the given code");
         }
         return realTimeWeather;
+    }
+
+    public RealTimeWeather update(String locationCode, RealTimeWeather realTimeWeather) throws LocationNotFoundException {
+        Location location = locationRepo.findByCode(locationCode);
+
+        if (location == null) {
+            throw new LocationNotFoundException("No location found with the given code");
+        }
+
+        realTimeWeather.setLocation(location);
+        realTimeWeather.setLastUpdated(new Date());
+
+        return RealtimeWeatherRepo.save(realTimeWeather);
     }
 
 }

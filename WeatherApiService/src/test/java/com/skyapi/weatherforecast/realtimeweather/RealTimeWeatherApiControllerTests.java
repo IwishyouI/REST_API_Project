@@ -1,6 +1,7 @@
 package com.skyapi.weatherforecast.realtimeweather;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.skyapi.weatherforecast.GeolocationException;
 import com.skyapi.weatherforecast.GeolocationService;
@@ -22,6 +23,7 @@ import java.util.Date;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -146,6 +148,31 @@ public class RealTimeWeatherApiControllerTests {
                 .andDo(print());
 
     }
+
+    @Test
+    public void testUpdateShouldReturn400BadRequest() throws Exception {
+        String locationCode = "ABC_US";
+        String requestURI = END_POINT_PATH + "/" + locationCode;
+
+        RealTimeWeather realTimeWeather = new RealTimeWeather();
+
+        realTimeWeather.setTemperature(-100);
+        realTimeWeather.setHumidity(32);
+        realTimeWeather.setPrecipitation(42);
+        realTimeWeather.setStatus("Snowy");
+        realTimeWeather.setWindSpeed(12);
+        realTimeWeather.setLastUpdated(new Date());
+
+
+        String bodyContent = objectMapper.writeValueAsString(realTimeWeather);
+
+        Mockito.when(realTimeWeatherService.update(locationCode, realTimeWeather)).thenReturn(realTimeWeather);
+
+        mockMvc.perform(put(requestURI).contentType("application/json").content(bodyContent))
+                .andExpect(status().isBadRequest())
+                .andDo(print());
+    }
+
 
 
 }

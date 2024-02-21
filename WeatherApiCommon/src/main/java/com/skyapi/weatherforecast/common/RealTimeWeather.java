@@ -2,8 +2,11 @@ package com.skyapi.weatherforecast.common;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.hibernate.validator.constraints.Range;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,8 +17,11 @@ public class RealTimeWeather {
 
     @Column(name = "location_code")
     @Id
+    @JsonIgnore
     private String locationCode;
 
+
+    @Range(min = -50, max = 50, message = "temperature must be in the range of -50 to 50 Celsius degree")
     private int temperature;
 
     private int humidity;
@@ -29,12 +35,14 @@ public class RealTimeWeather {
 
     @JsonProperty("last_updated")
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @JsonIgnore
     private Date lastUpdated;
 
 
     @OneToOne
     @JoinColumn(name = "location_code")
     @MapsId
+    @JsonIgnore
     private Location location;
 
 

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="RealTimeWeather 업데이트 날짜 형식 변경">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="getRealtimeWeather By locationCode 작성 및 테스트">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealTimeWeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealTimeWeatherRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealTimeWeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealTimeWeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/realtime/RealtimeWeatherApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherApiControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/realtimeweather/RealTimeWeatherRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <recent name="com.skyapi.weatherforecast.RestClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RealTimeWeatherApiControllerTests.testGetByLocationCodeShouldReturn200OK">
+  <component name="RunManager" selected="JUnit.RealTimeWeatherApiControllerTests.testUpdateShouldReturn400BadRequest">
     <configuration name="RealTimeWeatherApiControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
@@ -128,7 +125,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RealTimeWeatherRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RealTimeWeatherApiControllerTests.testUpdateShouldReturn200OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -137,13 +134,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.realtimeweather" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherApiControllerTests" />
+      <option name="METHOD_NAME" value="testUpdateShouldReturn200OK" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RealTimeWeatherRepositoryTest.testFindByLocationFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RealTimeWeatherApiControllerTests.testUpdateShouldReturn400BadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -152,8 +150,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.realtimeweather" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherRepositoryTest" />
-      <option name="METHOD_NAME" value="testFindByLocationFound" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.realtimeweather.RealTimeWeatherApiControllerTests" />
+      <option name="METHOD_NAME" value="testUpdateShouldReturn400BadRequest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,16 +161,16 @@
       <item itemvalue="JUnit.RealTimeWeatherApiControllerTests" />
       <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testGetByLocationCodeShouldReturn200OK" />
       <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testGetByLocationCodeShouldReturn404NotFound" />
-      <item itemvalue="JUnit.RealTimeWeatherRepositoryTest" />
-      <item itemvalue="JUnit.RealTimeWeatherRepositoryTest.testFindByLocationFound" />
+      <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testUpdateShouldReturn200OK" />
+      <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testUpdateShouldReturn400BadRequest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testUpdateShouldReturn400BadRequest" />
+        <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testUpdateShouldReturn200OK" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testGetByLocationCodeShouldReturn200OK" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests.testGetByLocationCodeShouldReturn404NotFound" />
         <item itemvalue="JUnit.RealTimeWeatherApiControllerTests" />
-        <item itemvalue="JUnit.RealTimeWeatherRepositoryTest" />
-        <item itemvalue="JUnit.RealTimeWeatherRepositoryTest.testFindByLocationFound" />
       </list>
     </recent_temporary>
   </component>
@@ -377,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708427003079</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="getRealtimeWeather By locationCode 작성 및 테스트">
+      <option name="closed" value="true" />
+      <created>1708513176850</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1708513176850</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -405,7 +411,8 @@
     <MESSAGE value="RealTimeWeatherDTO 작성" />
     <MESSAGE value="RealTimeWeatherDTO 작성 및 &#10;RealtimeWeatherApiController 테스트 시 location이 DTO로 나오는것 확인" />
     <MESSAGE value="RealTimeWeather 업데이트 날짜 형식 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="RealTimeWeather 업데이트 날짜 형식 변경" />
+    <MESSAGE value="getRealtimeWeather By locationCode 작성 및 테스트" />
+    <option name="LAST_COMMIT_MESSAGE" value="getRealtimeWeather By locationCode 작성 및 테스트" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

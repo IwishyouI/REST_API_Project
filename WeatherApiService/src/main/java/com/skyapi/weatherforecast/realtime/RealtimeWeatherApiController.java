@@ -7,17 +7,16 @@ import com.skyapi.weatherforecast.GeolocationService;
 import com.skyapi.weatherforecast.common.Location;
 import com.skyapi.weatherforecast.common.RealTimeWeather;
 import com.skyapi.weatherforecast.location.LocationNotFoundException;
+import org.apache.coyote.Response;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/v1/realtime")
@@ -48,13 +47,12 @@ public class RealtimeWeatherApiController {
             RealTimeWeatherDTO dto = modelMapper.map(realTimeWeather, RealTimeWeatherDTO.class);
             return ResponseEntity.ok(dto);
         } catch (GeolocationException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().build();
         } catch (LocationNotFoundException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
             return ResponseEntity.notFound().build();
         }
-
 
 
     }
@@ -64,7 +62,7 @@ public class RealtimeWeatherApiController {
 
         try {
             RealTimeWeather realTimeWeather = realTimeWeatherService.getByLocationCode(locationCode);
-            RealTimeWeatherDTO dto = modelMapper.map(realTimeWeather, RealTimeWeatherDTO.class);
+            RealTimeWeatherDTO dto = entity2DTO(realTimeWeather);
             return ResponseEntity.ok(dto);
         } catch (LocationNotFoundException e) {
             LOGGER.error(e.getMessage(), e);
@@ -74,4 +72,21 @@ public class RealtimeWeatherApiController {
     }
 
 
+    @PutMapping("/{code}")
+    public ResponseEntity<?> updateRealtimeWeather(@PathVariable("code") String code, @RequestBody @Valid RealTimeWeather realTimeWeatherInRequest) {
+        try {
+            RealTimeWeather updatedRealtimeWeather = realTimeWeatherService.update(code, realTimeWeatherInRequest);
+            RealTimeWeatherDTO dto = entity2DTO(updatedRealtimeWeather);
+
+            return ResponseEntity.ok(dto);
+        } catch (LocationNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+    private RealTimeWeatherDTO entity2DTO(RealTimeWeather realTimeWeather) {
+
+        return modelMapper.map(realTimeWeather, RealTimeWeatherDTO.class);
+    }
 }
