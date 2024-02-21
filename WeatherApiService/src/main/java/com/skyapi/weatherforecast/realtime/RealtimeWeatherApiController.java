@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -57,4 +58,20 @@ public class RealtimeWeatherApiController {
 
 
     }
+
+    @GetMapping("/{locationCode}")
+    public ResponseEntity<?> getRealtimeWeatherByLocationCode(@PathVariable("locationCode") String locationCode) {
+
+        try {
+            RealTimeWeather realTimeWeather = realTimeWeatherService.getByLocationCode(locationCode);
+            RealTimeWeatherDTO dto = modelMapper.map(realTimeWeather, RealTimeWeatherDTO.class);
+            return ResponseEntity.ok(dto);
+        } catch (LocationNotFoundException e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+
 }

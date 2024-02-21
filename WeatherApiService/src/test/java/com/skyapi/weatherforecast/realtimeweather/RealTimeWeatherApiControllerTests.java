@@ -104,5 +104,48 @@ public class RealTimeWeatherApiControllerTests {
 
     }
 
+    @Test
+    public void testGetByLocationCodeShouldReturn404NotFound() throws Exception {
+        String code = "abc";
+
+        Mockito.when(realTimeWeatherService.getByLocationCode(code)).thenThrow(LocationNotFoundException.class);
+
+        mockMvc.perform(get(END_POINT_PATH + "/" + code))
+                .andExpect(status().isNotFound())
+                .andDo(print());
+    }
+
+    @Test
+    public void testGetByLocationCodeShouldReturn200OK() throws Exception {
+        Location location = new Location();
+        location.setCode("DANA_VN");
+        location.setCityName("Da nang");
+        location.setCountryCode("VN");
+        location.setCountryName("Vietnam");
+        location.setEnabled(true);
+        location.setTrashed(false);
+        RealTimeWeather realTimeWeather = new RealTimeWeather();
+
+        realTimeWeather.setTemperature(-2);
+        realTimeWeather.setHumidity(32);
+        realTimeWeather.setPrecipitation(42);
+        realTimeWeather.setStatus("Snowy");
+        realTimeWeather.setWindSpeed(12);
+        realTimeWeather.setLastUpdated(new Date());
+        realTimeWeather.setLocation(location);
+
+        String code = location.getCode();
+
+
+        Mockito.when(realTimeWeatherService.getByLocationCode(code)).thenReturn(realTimeWeather);
+
+        mockMvc.perform(get(END_POINT_PATH + "/" + code))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json"))
+                .andExpect(jsonPath("$.location",is("Da nang , null , Vietnam")))
+                .andDo(print());
+
+    }
+
 
 }

@@ -104,4 +104,18 @@ public class RealTimeWeather {
         this.locationCode = location.getCode();
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "RealTimeWeather{" +
+                "locationCode='" + locationCode + '\'' +
+                ", temperature=" + temperature +
+                ", humidity=" + humidity +
+                ", precipitation=" + precipitation +
+                ", status='" + status + '\'' +
+                ", windSpeed=" + windSpeed +
+                ", lastUpdated=" + lastUpdated +
+                ", location=" + location +
+                '}';
+    }
 }

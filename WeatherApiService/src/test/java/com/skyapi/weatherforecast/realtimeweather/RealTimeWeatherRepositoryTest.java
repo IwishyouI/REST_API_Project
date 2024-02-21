@@ -56,6 +56,37 @@ public class RealTimeWeatherRepositoryTest {
 
     }
 
+    @Test
+    public void testFindByLocationNotFound() {
+        String code = "ABC";
+
+        RealTimeWeather realTimeWeather = repo.findByLocationCode(code);
+        System.out.println(realTimeWeather);
+        assertThat(realTimeWeather).isNull();
+
+
+    }
+
+    @Test
+    public void testFindByTrashedLocationNotFound() {
+        String code = "NYC_USA";
+
+        RealTimeWeather realTimeWeather = repo.findByLocationCode(code);
+        System.out.println(realTimeWeather);
+        assertThat(realTimeWeather).isNull();
+
+
+    }
+
+    @Test
+    public void testFindByLocationFound() {
+        String code = "DANA_VN";
+
+        RealTimeWeather realTimeWeather = repo.findByLocationCode(code);
+        System.out.println(realTimeWeather);
+        assertThat(realTimeWeather.getLocation().getCountryCode()).isEqualTo("VN");
+
+    }
 
 
 }

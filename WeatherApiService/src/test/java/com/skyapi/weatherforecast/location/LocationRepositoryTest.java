@@ -120,4 +120,28 @@ public class LocationRepositoryTest {
         assertThat(savedLocation.getRealtimeWeather().getHumidity()).isEqualTo(90);
     }
 
+    @Test
+    public void testRealTimeWeatherAddRepository() {
+        Location location = new Location();
+        location.setCode("DANA_VN");
+        location.setCityName("Da nang");
+        location.setCountryCode("VN");
+        location.setCountryName("Vietnam");
+        location.setEnabled(true);
+
+        RealTimeWeather realTimeWeather = new RealTimeWeather();
+        realTimeWeather.setHumidity(46);
+        realTimeWeather.setTemperature(3);
+        realTimeWeather.setPrecipitation(3);
+        realTimeWeather.setWindSpeed(3);
+        realTimeWeather.setStatus("Snowy");
+        realTimeWeather.setLastUpdated(new Date());
+
+        location.setRealtimeWeather(realTimeWeather);
+        realTimeWeather.setLocation(location);
+        Location savedLocation = repository.save(location);
+
+        assertThat(savedLocation.getRealtimeWeather().getLocation().getCode()).isEqualTo("DANA_VN");
+    }
+
 }

@@ -32,4 +32,14 @@ public class RealTimeWeatherService {
         return realTimeWeather;
     }
 
+    public RealTimeWeather getByLocationCode(String locationCode) throws LocationNotFoundException {
+
+        RealTimeWeather realTimeWeather = RealtimeWeatherRepo.findByLocationCode(locationCode);
+
+        if (realTimeWeather == null) {
+            throw new LocationNotFoundException("No location found with the given code");
+        }
+        return realTimeWeather;
+    }
+
 }
