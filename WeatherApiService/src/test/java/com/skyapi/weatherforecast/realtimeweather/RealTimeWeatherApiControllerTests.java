@@ -174,5 +174,44 @@ public class RealTimeWeatherApiControllerTests {
     }
 
 
+    @Test
+    public void testUpdateShouldReturn200OK() throws Exception {
+
+        String locationCode = "DANA_VN";
+        String requestURI = END_POINT_PATH + "/" + locationCode;
+
+        RealTimeWeather realTimeWeather = new RealTimeWeather();
+
+
+        realTimeWeather.setTemperature(0);
+        realTimeWeather.setHumidity(15);
+        realTimeWeather.setPrecipitation(3);
+        realTimeWeather.setStatus("Sunny");
+        realTimeWeather.setWindSpeed(3);
+        realTimeWeather.setLastUpdated(new Date());
+
+        Location location = new Location();
+        location.setCode("DANA_VN");
+        location.setCityName("Da nang");
+        location.setCountryCode("VN");
+        location.setCountryName("Vietnam");
+        location.setEnabled(true);
+        location.setTrashed(false);
+        location.setRealtimeWeather(realTimeWeather);
+        realTimeWeather.setLocation(location);
+        String bodyContent = objectMapper.writeValueAsString(realTimeWeather);
+
+        Mockito.when(realTimeWeatherService.update(locationCode, realTimeWeather)).thenReturn(realTimeWeather);
+
+        String expectedContent = location.getCityName() + " , " + location.getRegionName() + " , " + location.getCountryName();
+
+        mockMvc.perform(put(requestURI).contentType("application/json").content(bodyContent))
+                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$."))
+                .andDo(print());
+
+
+    }
+
 
 }

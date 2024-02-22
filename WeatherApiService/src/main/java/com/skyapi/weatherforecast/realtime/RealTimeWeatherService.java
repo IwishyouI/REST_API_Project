@@ -16,8 +16,9 @@ public class RealTimeWeatherService {
     private RealTimeWeatherRepository RealtimeWeatherRepo;
     private LocationRepository locationRepo;
 
-    public RealTimeWeatherService(RealTimeWeatherRepository RealtimeWeatherRepo) {
+    public RealTimeWeatherService(RealTimeWeatherRepository RealtimeWeatherRepo , LocationRepository locationRepo) {
         this.RealtimeWeatherRepo = RealtimeWeatherRepo;
+        this.locationRepo = locationRepo;
     }
 
 

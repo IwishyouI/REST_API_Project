@@ -72,10 +72,12 @@ public class RealtimeWeatherApiController {
     }
 
 
-    @PutMapping("/{code}")
-    public ResponseEntity<?> updateRealtimeWeather(@PathVariable("code") String code, @RequestBody @Valid RealTimeWeather realTimeWeatherInRequest) {
+    @PutMapping("/{locationCode}")
+    public ResponseEntity<?> updateRealtimeWeather(@PathVariable("locationCode") String locationCode, @RequestBody @Valid RealTimeWeather realTimeWeatherInRequest) {
+
+        realTimeWeatherInRequest.setLocationCode(locationCode);
         try {
-            RealTimeWeather updatedRealtimeWeather = realTimeWeatherService.update(code, realTimeWeatherInRequest);
+            RealTimeWeather updatedRealtimeWeather = realTimeWeatherService.update(locationCode, realTimeWeatherInRequest);
             RealTimeWeatherDTO dto = entity2DTO(updatedRealtimeWeather);
 
             return ResponseEntity.ok(dto);
