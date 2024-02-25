@@ -4,12 +4,12 @@ package com.skyapi.weatherforecast.common;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Weather_hourly")
+@Table(name = "weather_hourly")
 public class HourlyWeather {
 
 
     @EmbeddedId
-    private HourlyWeatherId id;
+    private HourlyWeatherId id = new HourlyWeatherId();
 
     private int temperature;
 

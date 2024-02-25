@@ -12,7 +12,7 @@ public class HourlyWeatherId implements Serializable {
 
     private int hourOfDay;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "location_code")
     private Location location;
 
