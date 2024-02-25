@@ -4,7 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
+import com.skyapi.weatherforecast.common.HourlyWeather;
 import com.skyapi.weatherforecast.common.RealTimeWeather;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,16 +31,16 @@ public class LocationRepositoryTest {
     public void testAddSuccess() {
 
         Location location = new Location();
-        location.setCode("NYC_USA");
-        location.setCityName("New York City");
-        location.setRegionName("New York");
-        location.setCountryCode("US");
-        location.setCountryName("United states of America");
+        location.setCode("MBMH_IN");
+        location.setCityName("Mumbai");
+        location.setRegionName("Maharashtra");
+        location.setCountryCode("IN");
+        location.setCountryName("India");
         location.setEnabled(true);
         location.setTrashed(false);
         Location savedLocation = repository.save(location);
 
-        assertThat(savedLocation.getCode()).isEqualTo("NYC_USA");
+        assertThat(savedLocation.getCode()).isEqualTo("MBMH_IN");
     }
 
 
@@ -142,6 +144,33 @@ public class LocationRepositoryTest {
         Location savedLocation = repository.save(location);
 
         assertThat(savedLocation.getRealtimeWeather().getLocation().getCode()).isEqualTo("DANA_VN");
+    }
+
+    @Test
+    public void testAddHourlyWeatherData() {
+
+        Location location = repository.findById("MBMH_IN").get();
+        List<HourlyWeather> listHourlyWeather = location.getListHourlyWeather();
+
+        HourlyWeather forecast1 = new HourlyWeather().id(location, 8)
+                .temperature(20)
+                .precipitation(60)
+                .status("Cloudy");
+
+        HourlyWeather forecast2 = new HourlyWeather()
+                .location(location)
+                .hourOfDay(9)
+                .temperature(20)
+                .precipitation(60)
+                .status("Cloudy");
+
+        listHourlyWeather.add(forecast1);
+        listHourlyWeather.add(forecast2);
+
+        Location updatedLocation = repository.save(location);
+
+        assertThat(updatedLocation.getListHourlyWeather()).isNotEmpty();
+
     }
 
 }

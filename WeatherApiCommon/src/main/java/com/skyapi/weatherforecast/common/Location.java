@@ -52,6 +52,10 @@ public class Location {
     @PrimaryKeyJoinColumn
     private RealTimeWeather realtimeWeather;
 
+
+    @OneToMany(mappedBy = "id.location",cascade = CascadeType.ALL)
+    private List<HourlyWeather> listHourlyWeather = new ArrayList<>();
+
     public Location() {
     }
 
@@ -149,4 +153,11 @@ public class Location {
         return cityName + " , " + regionName + " , " + countryName;
     }
 
+    public List<HourlyWeather> getListHourlyWeather() {
+        return listHourlyWeather;
+    }
+
+    public void setListHourlyWeather(List<HourlyWeather> listHourlyWeather) {
+        this.listHourlyWeather = listHourlyWeather;
+    }
 }
