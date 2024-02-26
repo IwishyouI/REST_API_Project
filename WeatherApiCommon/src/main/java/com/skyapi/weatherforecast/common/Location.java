@@ -160,4 +160,9 @@ public class Location {
     public void setListHourlyWeather(List<HourlyWeather> listHourlyWeather) {
         this.listHourlyWeather = listHourlyWeather;
     }
+
+    public Location code(String locationCode) {
+        setCode(locationCode);
+        return this;
+    }
 }

@@ -173,4 +173,29 @@ public class LocationRepositoryTest {
 
     }
 
+
+    @Test
+    public void testFindByCoutryCodeAndCityNameNotFound() {
+
+        String countryCode = "US";
+        String cityName = "New York City";
+
+        Location location = repository.findByCountryCodeAndCityName(countryCode, cityName);
+
+        assertThat(location).isNull();
+
+    }
+
+    @Test
+    public void testFindByCoutryCodeAndCityNameFound() {
+
+        String countryCode = "VN";
+        String cityName = "Da nang";
+
+        Location location = repository.findByCountryCodeAndCityName(countryCode, cityName);
+
+        assertThat(location).isNotNull();
+        assertThat(location.getCountryCode()).isEqualTo(countryCode);
+        assertThat(location.getCityName()).isEqualTo(cityName);
+    }
 }
