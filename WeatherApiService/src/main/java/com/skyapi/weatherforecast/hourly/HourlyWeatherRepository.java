@@ -15,4 +15,6 @@ public interface HourlyWeatherRepository extends CrudRepository<HourlyWeather, H
             and h.id.location.trashed = false
             """)
     public List<HourlyWeather> findByLocationCode(String locationCode, int currentHour);
+
+
 }
