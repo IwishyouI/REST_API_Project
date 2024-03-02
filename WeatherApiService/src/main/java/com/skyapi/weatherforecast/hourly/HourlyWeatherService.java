@@ -13,9 +13,9 @@ import java.util.List;
 public class HourlyWeatherService {
 
 
-    private HourlyWeatherRepository hourlyWeatherRepo;
+    private final HourlyWeatherRepository hourlyWeatherRepo;
 
-    private LocationRepository locationRepo;
+    private final LocationRepository locationRepo;
 
     public HourlyWeatherService(HourlyWeatherRepository hourlyWeatherRepository, LocationRepository locationRepo) {
         this.hourlyWeatherRepo = hourlyWeatherRepository;

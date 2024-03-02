@@ -177,7 +177,7 @@ public class LocationRepositoryTest {
     @Test
     public void testFindByCoutryCodeAndCityNameNotFound() {
 
-        String countryCode = "US";
+        String countryCode = "UK";
         String cityName = "New York City";
 
         Location location = repository.findByCountryCodeAndCityName(countryCode, cityName);
@@ -187,7 +187,7 @@ public class LocationRepositoryTest {
     }
 
     @Test
-    public void testFindByCoutryCodeAndCityNameFound() {
+    public void testFindByCountryCodeAndCityNameFound() {
 
         String countryCode = "VN";
         String cityName = "Da nang";

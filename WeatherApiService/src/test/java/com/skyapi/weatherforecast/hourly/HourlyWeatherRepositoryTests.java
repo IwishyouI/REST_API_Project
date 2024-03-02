@@ -32,4 +32,14 @@ public class HourlyWeatherRepositoryTests {
         System.out.println(hourlyForecast);
         assertThat(hourlyForecast).isNotEmpty();
     }
+
+    @Test
+    public void findByLocationCodeNotFound() {
+        String locationCode = "MBMHIN";
+        int currentHour = 8;
+
+        List<HourlyWeather> hourlyForecast = repo.findByLocationCode(locationCode, currentHour);
+        System.out.println(hourlyForecast);
+        assertThat(hourlyForecast).isEmpty();
+    }
 }

@@ -22,10 +22,10 @@ import java.util.List;
 public class HourlyWeatherApiController {
 
 
-    private HourlyWeatherService hourlyWeatherService;
-    private GeolocationService locationService;
+    private final HourlyWeatherService hourlyWeatherService;
+    private final GeolocationService locationService;
 
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     public HourlyWeatherApiController(HourlyWeatherService hourlyWeatherService, GeolocationService locationService, ModelMapper modelMapper) {
         this.hourlyWeatherService = hourlyWeatherService;
@@ -52,7 +52,6 @@ public class HourlyWeatherApiController {
             return ResponseEntity.ok(hourlyForecast);
 
         } catch (LocationNotFoundException e) {
-
             return ResponseEntity.notFound().build();
         } catch (NumberFormatException | GeolocationException ex) {
             return ResponseEntity.badRequest().build();
@@ -72,11 +71,17 @@ public class HourlyWeatherApiController {
                 return ResponseEntity.noContent().build();
             }
 
-            return ResponseEntity.ok()
-        } catch (LocationNotFoundException e) {
-            throw new LocationNotFoundException("No location Found with the given code");
-        }
+            return ResponseEntity.ok(listEntity2DTO(hourlyForecast));
 
+        } catch (NumberFormatException ex) {
+
+            return ResponseEntity.badRequest().build();
+
+        } catch (LocationNotFoundException ex) {
+
+            return ResponseEntity.notFound().build();
+
+        }
     }
 
     private HourlyWeatherListDTO listEntity2DTO(List<HourlyWeather> hourlyForecast) {
