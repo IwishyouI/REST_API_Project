@@ -2,22 +2,18 @@ package com.skyapi.weatherforecast.common;
 
 
 import javax.persistence.*;
-
 @Entity
 @Table(name = "weather_hourly")
 public class HourlyWeather {
-
 
     @EmbeddedId
     private HourlyWeatherId id = new HourlyWeatherId();
 
     private int temperature;
-
     private int precipitation;
 
     @Column(length = 50)
     private String status;
-
 
     public HourlyWeatherId getId() {
         return id;
@@ -72,23 +68,13 @@ public class HourlyWeather {
         return this;
     }
 
-
     public HourlyWeather location(Location location) {
         this.id.setLocation(location);
         return this;
     }
+
     public HourlyWeather hourOfDay(int hour) {
         this.id.setHourOfDay(hour);
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return "HourlyWeather{" +
-                "id=" + id.getLocation() +
-                ", temperature=" + temperature +
-                ", precipitation=" + precipitation +
-                ", status='" + status + '\'' +
-                '}';
     }
 }

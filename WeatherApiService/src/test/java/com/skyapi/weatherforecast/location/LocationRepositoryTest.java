@@ -31,16 +31,16 @@ public class LocationRepositoryTest {
     public void testAddSuccess() {
 
         Location location = new Location();
-        location.setCode("MBMH_IN");
-        location.setCityName("Mumbai");
-        location.setRegionName("Maharashtra");
+        location.setCode("DELHI_IN");
+        location.setCityName("Delhi");
+        location.setRegionName("Delhi");
         location.setCountryCode("IN");
         location.setCountryName("India");
         location.setEnabled(true);
         location.setTrashed(false);
         Location savedLocation = repository.save(location);
 
-        assertThat(savedLocation.getCode()).isEqualTo("MBMH_IN");
+        assertThat(savedLocation.getCode()).isEqualTo("DELHI_IN");
     }
 
 
@@ -149,17 +149,17 @@ public class LocationRepositoryTest {
     @Test
     public void testAddHourlyWeatherData() {
 
-        Location location = repository.findById("MBMH_IN").get();
+        Location location = repository.findById("DELHI_IN").get();
         List<HourlyWeather> listHourlyWeather = location.getListHourlyWeather();
 
-        HourlyWeather forecast1 = new HourlyWeather().id(location, 8)
-                .temperature(20)
-                .precipitation(60)
+        HourlyWeather forecast1 = new HourlyWeather().id(location, 10)
+                .temperature(11)
+                .precipitation(16)
                 .status("Cloudy");
 
         HourlyWeather forecast2 = new HourlyWeather()
                 .location(location)
-                .hourOfDay(9)
+                .hourOfDay(11)
                 .temperature(20)
                 .precipitation(60)
                 .status("Cloudy");

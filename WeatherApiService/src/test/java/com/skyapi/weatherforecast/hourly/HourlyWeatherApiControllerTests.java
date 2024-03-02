@@ -108,10 +108,10 @@ public class HourlyWeatherApiControllerTests {
         Mockito.when(locationService.getLocation(Mockito.anyString())).thenReturn(location);
         Mockito.when(hourlyWeatherService.getByLocation(location, currentHour)).thenReturn(List.of(forecast1, forecast2));
 
-//        String expectedLocation = location.toString();
+        String expectedLocation = location.toString();
         mockMvc.perform(get(END_POINT_PATH).header(X_CURRENT_HOUR, currentHour))
                 .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.location",is(expectedLocation)))
+//                .andExpect(jsonPath("$.id.hourOfDay",is("10")))
                 .andDo(print());
 
     }

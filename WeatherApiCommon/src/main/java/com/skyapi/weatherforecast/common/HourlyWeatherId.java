@@ -9,17 +9,16 @@ import java.io.Serializable;
 
 @Embeddable
 public class HourlyWeatherId implements Serializable {
-
     private int hourOfDay;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "location_code")
     private Location location;
 
-    public HourlyWeatherId() {
-    }
+    public HourlyWeatherId() { }
 
     public HourlyWeatherId(int hourOfDay, Location location) {
+        super();
         this.hourOfDay = hourOfDay;
         this.location = location;
     }
@@ -39,8 +38,5 @@ public class HourlyWeatherId implements Serializable {
     public void setLocation(Location location) {
         this.location = location;
     }
-
-
-
 
 }

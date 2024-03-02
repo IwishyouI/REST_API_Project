@@ -49,7 +49,7 @@ public class HourlyWeatherApiController {
                 return ResponseEntity.noContent().build();
             }
 
-            return ResponseEntity.ok(hourlyForecast);
+            return ResponseEntity.ok(listEntity2DTO(hourlyForecast));
 
         } catch (LocationNotFoundException e) {
             return ResponseEntity.notFound().build();
