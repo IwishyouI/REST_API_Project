@@ -7,6 +7,7 @@ import com.skyapi.weatherforecast.location.LocationNotFoundException;
 import com.skyapi.weatherforecast.location.LocationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -46,5 +47,9 @@ public class HourlyWeatherService {
         }
 
         return hourlyWeatherRepo.findByLocationCode(locationCode,currentHour);
+    }
+
+    public List<HourlyWeather> updateByLocationCode(String locationCode, List<HourlyWeather> hourlyForecastInRequest) {
+        return Collections.emptyList();
     }
 }

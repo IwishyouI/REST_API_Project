@@ -1,6 +1,7 @@
 package com.skyapi.weatherforecast;
 
 
+import com.skyapi.weatherforecast.hourly.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -40,6 +41,24 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 
         LOGGER.error(ex.getMessage(), ex);
+        return error;
+    }
+
+
+    @ExceptionHandler(BadRequestException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ErrorDTO BadRequestExceptionHandle(HttpServletRequest request, Exception ex) {
+
+        ErrorDTO error = new ErrorDTO();
+        error.setTimestamp(new Date());
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.addError(HttpStatus.BAD_REQUEST.getReasonPhrase());
+        error.setPath(request.getServletPath());
+
+
+        LOGGER.error(ex.getMessage(),ex);
+
         return error;
     }
 

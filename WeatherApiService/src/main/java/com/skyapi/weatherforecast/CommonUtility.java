@@ -6,7 +6,7 @@ public class CommonUtility {
 
 
     public static String getClientIP(HttpServletRequest request) {
-        String ip = request.getHeader("X-Forwarded-For");
+        String ip = request.getHeader("X-FORWARED-FOR");
 
         if (ip == null) {
             ip = request.getRemoteAddr();

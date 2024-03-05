@@ -36,4 +36,14 @@ public class IP2LocationTests {
         assertThat(ipResult.getCity()).isEqualTo("Seoul");
         assertThat(ipResult.getStatus()).isEqualTo("OK");
     }
+
+    @Test
+    public void testValidIP3() throws IOException {
+        IP2Location ip2Location = new IP2Location();
+        String ipAddress = "103.48.198.141";
+        ip2Location.Open(DBPath);
+        IPResult ipResult = ip2Location.IPQuery(ipAddress);
+        System.out.println(ipResult);
+
+    }
 }
