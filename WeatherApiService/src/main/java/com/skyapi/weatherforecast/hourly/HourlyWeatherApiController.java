@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -88,7 +89,24 @@ public class HourlyWeatherApiController {
         if(listDTO.isEmpty()){
             throw new BadRequestException("Hourly Forecast data cannot be empty");
         }
+
+        listDTO.forEach(System.out::println);
+
+        List<HourlyWeather> listhourlyWeathers = listDTO2ListEntity(listDTO);
+
+        System.out.println(listhourlyWeathers);
         return ResponseEntity.accepted().build();
+    }
+
+    private List<HourlyWeather> listDTO2ListEntity(List<HourlyWeatherDTO> listDTO) {
+        List<HourlyWeather> listEntity = new ArrayList<>();
+
+        listDTO.forEach(dto-> {
+
+            listEntity.add(modelMapper.map(dto, HourlyWeather.class));
+        });
+
+        return listEntity;
     }
 
 

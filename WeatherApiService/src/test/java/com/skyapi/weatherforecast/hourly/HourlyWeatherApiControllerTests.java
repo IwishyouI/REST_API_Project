@@ -217,6 +217,32 @@ public class HourlyWeatherApiControllerTests {
 
     }
 
+    @Test
+    public void updateShouldReturn400BadRequestBecauseInvalidData() throws Exception {
+        String requestURI = END_POINT_PATH + "/NYC_USA";
+
+        HourlyWeatherDTO dto1 = new HourlyWeatherDTO()
+                .hourOfDay(10)
+                .temperature(133)
+                .precipitation(700)
+                .status("Cloudy");
+
+        HourlyWeatherDTO dto2 = new HourlyWeatherDTO()
+                .hourOfDay(-1)
+                .temperature(16)
+                .precipitation(59)
+                .status("Sunny");
+
+        List<HourlyWeatherDTO> listDTO = List.of(dto1, dto2);
+        String requestBody = objectMapper.writeValueAsString(listDTO);
+
+        mockMvc.perform(put(requestURI).contentType(MediaType.APPLICATION_JSON).content(requestBody))
+                .andExpect(status().isBadRequest())
+                .andDo(print());
+
+    }
+
+
 
 
 }

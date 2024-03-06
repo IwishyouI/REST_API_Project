@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
-@JsonPropertyOrder({"hour_of_day","temperature","precipitation","status"})
+@JsonPropertyOrder({"hour_of_day", "temperature", "precipitation", "status"})
 public class HourlyWeatherDTO {
 
 
@@ -46,5 +46,35 @@ public class HourlyWeatherDTO {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public HourlyWeatherDTO hourOfDay(int hour) {
+        setHourOfDay(hour);
+        return this;
+    }
+
+    public HourlyWeatherDTO status(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    public HourlyWeatherDTO precipitation(int precipitation) {
+        setPrecipitation(precipitation);
+        return this;
+    }
+
+    public HourlyWeatherDTO temperature(int temperature) {
+        setTemperature(temperature);
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "HourlyWeatherDTO{" +
+                "hourOfDay=" + hourOfDay +
+                ", temperature=" + temperature +
+                ", precipitation=" + precipitation +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
