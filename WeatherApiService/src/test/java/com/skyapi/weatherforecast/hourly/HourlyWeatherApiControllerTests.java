@@ -222,13 +222,13 @@ public class HourlyWeatherApiControllerTests {
         String requestURI = END_POINT_PATH + "/NYC_USA";
 
         HourlyWeatherDTO dto1 = new HourlyWeatherDTO()
-                .hourOfDay(10)
-                .temperature(133)
-                .precipitation(700)
+                .hourOfDay(100)
+                .temperature(13)
+                .precipitation(70)
                 .status("Cloudy");
 
         HourlyWeatherDTO dto2 = new HourlyWeatherDTO()
-                .hourOfDay(-1)
+                .hourOfDay(1)
                 .temperature(16)
                 .precipitation(59)
                 .status("Sunny");

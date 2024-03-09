@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.validation.annotation.Validated;
 
@@ -24,10 +25,14 @@ public class RealTimeWeather {
     @Range(min = -50, max = 50, message = "temperature must be in the range of -50 to 50 Celsius degree")
     private int temperature;
 
+    @Range(min = 0, max = 99, message = "humidity must be in the range of 0 to 99 ")
     private int humidity;
 
+
+    @Range(min = 0, max = 99, message = "precipitation must be in the range of 0 to 99 ")
     private int precipitation;
 
+    @Length(min = 3 , max = 50 , message = "Status must be in between 3-50")
     private String status;
 
     @JsonProperty("wind_speed")

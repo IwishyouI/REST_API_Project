@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="BadRequestException 추가 및 IP2 Location 안나오는 문제 수정 중">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="HourlyWeatherDTO put 테스트작성 중">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/HourlyWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/HourlyWeather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiControllerTests.java" afterDir="false" />
@@ -48,7 +50,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dlwhd/OneDrive/바탕 화면/shopmallproject/shoppingmall&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dlwhd/OneDrive/바탕 화면/Study&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -79,7 +81,7 @@
       <recent name="com.skyapi.weatherforecast.RestClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseInvalidData">
+  <component name="RunManager" selected="JUnit.HourlyWeatherApiControllerTests">
     <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
@@ -93,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HourlyWeatherApiControllerTests.testGetByCodeShouldReturn204NoContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HourlyWeatherApiControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -103,8 +105,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.hourly" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.hourly.HourlyWeatherApiControllerTests" />
-      <option name="METHOD_NAME" value="testGetByCodeShouldReturn204NoContent" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,18 +160,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.WeatherApiServiceApplication" />
+      <item itemvalue="JUnit.HourlyWeatherApiControllerTests" />
       <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseInvalidData" />
       <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseNoData" />
-      <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn204NoContent" />
       <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn400BadRequest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HourlyWeatherApiControllerTests" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseInvalidData" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseNoData" />
         <item itemvalue="Application.WeatherApiServiceApplication" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn400BadRequest" />
-        <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn204NoContent" />
       </list>
     </recent_temporary>
   </component>
@@ -455,7 +456,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709682042627</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="HourlyWeatherDTO put 테스트작성 중">
+      <option name="closed" value="true" />
+      <created>1709737345337</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1709737345337</updated>
+    </task>
+    <task id="LOCAL-00036" summary="HourlyWeatherDTO put 테스트작성 중">
+      <option name="closed" value="true" />
+      <created>1709737348839</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1709737348839</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -470,8 +487,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Location delete 관련 코드 작성 및 테스트 &#10;1. 204 NoContent&#10;2. 404 NotFound" />
-    <MESSAGE value="GlobalExceptioinHandler 추가 작성 중" />
     <MESSAGE value="GlobalExceptioinHandler 작성 완료" />
     <MESSAGE value="handleMethodArgumentNotValid 작성 완료" />
     <MESSAGE value="Location Entity에 대한 Valid체크 추가" />
@@ -495,7 +510,9 @@
     <MESSAGE value="/v1/hourly Get 테스트 코드 작성" />
     <MESSAGE value="/v1/hourly Get 테스트 에러 수정" />
     <MESSAGE value="BadRequestException 추가 및 IP2 Location 안나오는 문제 수정 중" />
-    <option name="LAST_COMMIT_MESSAGE" value="BadRequestException 추가 및 IP2 Location 안나오는 문제 수정 중" />
+    <MESSAGE value="HourlyWeatherDTO put 작성 중" />
+    <MESSAGE value="HourlyWeatherDTO put 테스트작성 중" />
+    <option name="LAST_COMMIT_MESSAGE" value="HourlyWeatherDTO put 테스트작성 중" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
