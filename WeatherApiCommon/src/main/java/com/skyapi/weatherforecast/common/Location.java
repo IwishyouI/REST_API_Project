@@ -1,7 +1,6 @@
 package com.skyapi.weatherforecast.common;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -56,6 +55,9 @@ public class Location {
     @OneToMany(mappedBy = "id.location",cascade = CascadeType.ALL)
     private List<HourlyWeather> listHourlyWeather = new ArrayList<>();
 
+
+    @OneToMany(mappedBy = "id.location",cascade = CascadeType.ALL)
+    private List<DailyWeather> listDailyWeather = new ArrayList<>();
     public Location() {
     }
 
@@ -159,6 +161,14 @@ public class Location {
 
     public void setListHourlyWeather(List<HourlyWeather> listHourlyWeather) {
         this.listHourlyWeather = listHourlyWeather;
+    }
+
+    public List<DailyWeather> getDailyWeathers() {
+        return listDailyWeather;
+    }
+
+    public void setDailyWeathers(List<DailyWeather> dailyWeathers) {
+        this.listDailyWeather = dailyWeathers;
     }
 
     public Location code(String locationCode) {

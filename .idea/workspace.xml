@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="HourlyWeatherDTO put 테스트작성 중">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="GlobalExceptionHandler 추가 및 Put Mapping에 Valid 검증 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/RealTimeWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/WeatherApiServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,16 +19,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="3bff4697-ee9e-4e0f-ad9b-35a9477d74aa" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -81,7 +74,7 @@
       <recent name="com.skyapi.weatherforecast.RestClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HourlyWeatherApiControllerTests">
+  <component name="RunManager" selected="Application.WeatherApiServiceApplication">
     <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
       <module name="WeatherApiService" />
@@ -161,16 +154,16 @@
     <list>
       <item itemvalue="Application.WeatherApiServiceApplication" />
       <item itemvalue="JUnit.HourlyWeatherApiControllerTests" />
+      <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn400BadRequest" />
       <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseInvalidData" />
       <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseNoData" />
-      <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn400BadRequest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WeatherApiServiceApplication" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseInvalidData" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests.updateShouldReturn400BadRequestBecauseNoData" />
-        <item itemvalue="Application.WeatherApiServiceApplication" />
         <item itemvalue="JUnit.HourlyWeatherApiControllerTests.testGetByCodeShouldReturn400BadRequest" />
       </list>
     </recent_temporary>
@@ -472,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709737348839</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="GlobalExceptionHandler 추가 및 Put Mapping에 Valid 검증 추가">
+      <option name="closed" value="true" />
+      <created>1709990462241</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1709990462241</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,7 +488,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GlobalExceptioinHandler 작성 완료" />
     <MESSAGE value="handleMethodArgumentNotValid 작성 완료" />
     <MESSAGE value="Location Entity에 대한 Valid체크 추가" />
     <MESSAGE value="realtimeWeather Entity 추가 및 Repository 작성 , 테스트" />
@@ -512,7 +512,8 @@
     <MESSAGE value="BadRequestException 추가 및 IP2 Location 안나오는 문제 수정 중" />
     <MESSAGE value="HourlyWeatherDTO put 작성 중" />
     <MESSAGE value="HourlyWeatherDTO put 테스트작성 중" />
-    <option name="LAST_COMMIT_MESSAGE" value="HourlyWeatherDTO put 테스트작성 중" />
+    <MESSAGE value="GlobalExceptionHandler 추가 및 Put Mapping에 Valid 검증 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="GlobalExceptionHandler 추가 및 Put Mapping에 Valid 검증 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
