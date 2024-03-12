@@ -14,14 +14,18 @@
     <version>1.0.0</version>
     <name>WeatherApiService</name>
     <description>Demo project for Spring Boot</description>
+
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.skyapi</groupId>
             <artifactId>WeatherApiCommon</artifactId>
@@ -36,7 +40,8 @@
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>3.0.0</version>
-        </dependency>s
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -47,16 +52,13 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+
         <dependency>
             <groupId>com.ip2location</groupId>
             <artifactId>ip2location-java</artifactId>
@@ -73,6 +75,7 @@
             <artifactId>spring-restdocs-mockmvc</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>

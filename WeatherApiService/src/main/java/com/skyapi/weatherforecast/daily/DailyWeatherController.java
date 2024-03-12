@@ -11,4 +11,8 @@ public class DailyWeatherController {
 
 
 
+//    @GetMapping("/v1/daily")
+//    public ResponseEntity<?> getDailyWeather() {
+//
+//    }
 }
