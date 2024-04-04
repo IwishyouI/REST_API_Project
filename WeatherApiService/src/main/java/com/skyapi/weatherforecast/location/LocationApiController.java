@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -37,15 +38,14 @@ public class LocationApiController {
         return ResponseEntity.created(uri).body(addLocation);
     }
 
-    @Deprecated
     @GetMapping
-    ResponseEntity<?> listLocation() {
+    public ResponseEntity<?> listLocation() {
 
         List<Location> list = service.list();
         if (list.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(list);
+        return ResponseEntity.ok(listEntity2Dto(list));
 
     }
 
@@ -58,7 +58,7 @@ public class LocationApiController {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(location);
+        return ResponseEntity.ok(entity2Dto(location));
     }
 
     @PutMapping
@@ -66,7 +66,7 @@ public class LocationApiController {
         try {
             Location updatedLocation = service.update(location);
 
-            return ResponseEntity.ok(updatedLocation);
+            return ResponseEntity.ok(entity2Dto(updatedLocation));
         } catch (LocationNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
@@ -83,7 +83,17 @@ public class LocationApiController {
 
     }
 
+    private List<LocationDTO> listEntity2Dto(List<Location> listEntity) {
+        return listEntity.stream().map(entity -> entity2Dto(entity)).collect(Collectors.toList());
+    }
 
+    private LocationDTO entity2Dto(Location location) {
+        return modelMapper.map(location, LocationDTO.class);
+    }
+
+    private Location dto2Entity(LocationDTO dto) {
+        return modelMapper.map(dto, Location.class);
+    }
 
 
 }

@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="HourlyWeatherApiController update 200 작성 및 테스트">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Section 1 complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/DailyWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/DailyWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/DailyWeatherId.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/DailyWeatherId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/HourlyWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/HourlyWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/daily/DailyWeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/daily/DailyWeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/daily/DailyWeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/daily/DailyWeatherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/daily/DailyWeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/daily/DailyWeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/hourly/HourlyWeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/hourly/HourlyWeatherApiControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +238,7 @@
       <workItem from="1711955179888" duration="7030000" />
       <workItem from="1711964126156" duration="853000" />
       <workItem from="1712216229439" duration="3559000" />
-      <workItem from="1712221839736" duration="2738000" />
+      <workItem from="1712221839736" duration="4458000" />
     </task>
     <task id="LOCAL-00002" summary="Code Refactor 진행">
       <option name="closed" value="true" />
@@ -562,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710242952528</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Section 1 complete">
+      <option name="closed" value="true" />
+      <created>1712224633548</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1712224633548</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="realtimeWeather Entity 추가 및 Repository 작성 , 테스트" />
     <MESSAGE value="IP2Location 관련 코드 추가" />
     <MESSAGE value="RestTemplate으로 ListLocations 작동하는지 관련 코드 작성" />
     <MESSAGE value="IP2Location Test 관련 추가" />
@@ -605,7 +594,8 @@
     <MESSAGE value="GlobalExceptionHandler 추가 및 Put Mapping에 Valid 검증 추가" />
     <MESSAGE value="DailyWeather 부분 작성 중" />
     <MESSAGE value="HourlyWeatherApiController update 200 작성 및 테스트" />
-    <option name="LAST_COMMIT_MESSAGE" value="HourlyWeatherApiController update 200 작성 및 테스트" />
+    <MESSAGE value="Section 1 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 1 complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
