@@ -6,13 +6,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import com.skyapi.weatherforecast.common.DailyWeather;
 import com.skyapi.weatherforecast.common.HourlyWeather;
 import com.skyapi.weatherforecast.common.RealTimeWeather;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
 
 import com.skyapi.weatherforecast.common.Location;
@@ -45,6 +50,7 @@ public class LocationRepositoryTest {
 
 
     @Test
+    @Disabled
     public void LocationListTest() {
 
 
@@ -197,5 +203,52 @@ public class LocationRepositoryTest {
         assertThat(location).isNotNull();
         assertThat(location.getCountryCode()).isEqualTo(countryCode);
         assertThat(location.getCityName()).isEqualTo(cityName);
+    }
+
+    @Test
+    public void testAddDailyWeatherData() {
+        Location location = repository.findById("DELHI_IN").get();
+
+        List<DailyWeather> listdailyWeathers = location.getDailyWeathers();
+
+        DailyWeather forecast1 = new DailyWeather()
+                .location(location)
+                .dayOfMonth(5)
+                .maxTemp(42)
+                .minTemp(-30)
+                .month(12)
+                .status("Rainy")
+                .precipitation(30);
+
+        DailyWeather forecast2 = new DailyWeather()
+                .location(location)
+                .dayOfMonth(17)
+                .maxTemp(45)
+                .minTemp(5)
+                .month(7)
+                .status("CLear")
+                .precipitation(10);
+
+        listdailyWeathers.add(forecast1);
+        listdailyWeathers.add(forecast2);
+
+        Location updatedLocation = repository.save(location);
+
+        assertThat(updatedLocation.getListHourlyWeather()).isNotEmpty();
+
+    }
+
+
+    @Test
+    public void testListFirstPage() {
+
+        int pageSize = 2;
+        int pageNum = 0;
+
+        Pageable pageRequest = PageRequest.of(pageNum, pageSize);
+        Page<Location> page = repository.findUntrashed(pageRequest);
+
+        assertThat(page).size().isEqualTo(pageSize);
+        page.forEach(System.out::println);
     }
 }

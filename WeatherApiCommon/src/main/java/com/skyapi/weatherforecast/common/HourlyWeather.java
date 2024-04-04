@@ -2,6 +2,8 @@ package com.skyapi.weatherforecast.common;
 
 
 import javax.persistence.*;
+import java.util.Objects;
+
 @Entity
 @Table(name = "weather_hourly")
 public class HourlyWeather {
@@ -86,5 +88,24 @@ public class HourlyWeather {
                 ", precipitation=" + precipitation +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HourlyWeather that = (HourlyWeather) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public HourlyWeather getShallowCopy() {
+        HourlyWeather copy = new HourlyWeather();
+        copy.setId(this.getId());
+        return copy;
     }
 }

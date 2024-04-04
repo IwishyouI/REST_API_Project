@@ -97,6 +97,7 @@ public class HourlyWeatherApiController {
         List<HourlyWeather> listHourlyWeathers = listDTO2ListEntity(listDTO);
 
         System.out.println();
+
         listHourlyWeathers.forEach(System.out::println);
 
         try {

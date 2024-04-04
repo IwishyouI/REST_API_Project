@@ -53,4 +53,12 @@ public class DailyWeatherId implements Serializable {
     }
 
 
+    @Override
+    public String toString() {
+        return "DailyWeatherId{" +
+                "dayOfMonth=" + dayOfMonth +
+                ", month=" + month +
+                ", location=" + location +
+                '}';
+    }
 }

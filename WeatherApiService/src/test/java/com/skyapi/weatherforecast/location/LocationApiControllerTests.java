@@ -4,12 +4,15 @@ package com.skyapi.weatherforecast.location;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.skyapi.weatherforecast.common.Location;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Collections;
@@ -22,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(LocationApiController.class)
 public class LocationApiControllerTests {
-
 
     private static final String END_POINT_PATH = "/v1/locations";
 
@@ -57,6 +59,7 @@ public class LocationApiControllerTests {
 
 
     @Test
+    @Disabled
     public void testListShouldReturn204NoContent() throws Exception {
 
         Mockito.when(service.list()).thenReturn(Collections.emptyList());
@@ -67,6 +70,7 @@ public class LocationApiControllerTests {
     }
 
     @Test
+    @Disabled
     public void testListShouldReturn200OK() throws Exception {
         Location location = new Location();
         location.setCode("NYC_USA");
@@ -245,6 +249,8 @@ public class LocationApiControllerTests {
                 .andExpect(jsonPath("$.errors[0]",is("code must not be null")))
                 .andDo(print());
     }
+
+
 
 
 

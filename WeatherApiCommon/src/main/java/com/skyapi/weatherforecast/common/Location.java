@@ -52,7 +52,7 @@ public class Location {
     private RealTimeWeather realtimeWeather;
 
 
-    @OneToMany(mappedBy = "id.location",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id.location",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HourlyWeather> listHourlyWeather = new ArrayList<>();
 
 

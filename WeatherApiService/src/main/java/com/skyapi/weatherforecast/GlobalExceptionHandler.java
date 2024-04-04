@@ -2,6 +2,7 @@ package com.skyapi.weatherforecast;
 
 
 import com.skyapi.weatherforecast.hourly.BadRequestException;
+import com.skyapi.weatherforecast.location.LocationNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -54,7 +55,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ErrorDTO error = new ErrorDTO();
         error.setTimestamp(new Date());
         error.setStatus(HttpStatus.BAD_REQUEST.value());
-        error.addError(HttpStatus.BAD_REQUEST.getReasonPhrase());
+        error.addError(ex.getMessage());
         error.setPath(request.getServletPath());
 
 
@@ -67,6 +68,21 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorDTO handleConstraintViolationException(HttpServletRequest request, Exception ex) {
+
+        ErrorDTO error = new ErrorDTO();
+        error.setTimestamp(new Date());
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.addError(ex.getMessage());
+        error.setPath(request.getServletPath());
+
+        return error;
+    }
+
+
+    @ExceptionHandler(LocationNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public ErrorDTO LocationNotFoundException(HttpServletRequest request, Exception ex) {
 
         ErrorDTO error = new ErrorDTO();
         error.setTimestamp(new Date());
@@ -94,4 +110,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(error, headers, status);
 
     }
+
+
 }

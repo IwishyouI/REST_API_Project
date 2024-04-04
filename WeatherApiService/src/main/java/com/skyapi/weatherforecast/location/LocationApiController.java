@@ -2,6 +2,10 @@ package com.skyapi.weatherforecast.location;
 
 
 import com.skyapi.weatherforecast.common.Location;
+import com.skyapi.weatherforecast.common.RealTimeWeather;
+import com.skyapi.weatherforecast.realtime.RealTimeWeatherDTO;
+import org.hibernate.id.uuid.LocalObjectUuidHelper;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +19,8 @@ import java.util.List;
 @RequestMapping("/v1/locations")
 public class LocationApiController {
 
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Autowired
     private LocationService service;
@@ -31,8 +37,9 @@ public class LocationApiController {
         return ResponseEntity.created(uri).body(addLocation);
     }
 
+    @Deprecated
     @GetMapping
-    public ResponseEntity<?> listLocation() {
+    ResponseEntity<?> listLocation() {
 
         List<Location> list = service.list();
         if (list.isEmpty()) {

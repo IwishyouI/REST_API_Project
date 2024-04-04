@@ -90,4 +90,19 @@ public class DailyWeather {
         return this;
     }
 
+    public DailyWeather location(Location location) {
+        id.setLocation(location);
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "DailyWeather{" +
+                "id=" + id +
+                ", minTemp=" + minTemp +
+                ", maxTemp=" + maxTemp +
+                ", precipitation=" + precipitation +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

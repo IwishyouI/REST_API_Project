@@ -7,6 +7,7 @@ import com.skyapi.weatherforecast.location.LocationNotFoundException;
 import com.skyapi.weatherforecast.location.LocationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -49,14 +50,30 @@ public class HourlyWeatherService {
         return hourlyWeatherRepo.findByLocationCode(locationCode,currentHour);
     }
 
-    public List<HourlyWeather> updateByLocationCode(String locationCode, List<HourlyWeather> hourlyForecastInRequest) throws LocationNotFoundException {
+    public List<HourlyWeather> updateByLocationCode(String locationCode, List<HourlyWeather> hourlyWeatherInRequest) throws LocationNotFoundException {
 
-        Location locationInDB = locationRepo.findByCode(locationCode);
+        Location location = locationRepo.findByCode(locationCode);
 
-        if (locationInDB == null) {
+        if (location == null) {
             throw new LocationNotFoundException("No Location found with the given code " + locationCode);
         }
 
-        return (List<HourlyWeather>) hourlyWeatherRepo.saveAll(hourlyForecastInRequest);
+        for (HourlyWeather item : hourlyWeatherInRequest) {
+            item.getId().setLocation(location);
+        }
+
+        List<HourlyWeather> hourlyWeatherInDB = location.getListHourlyWeather();
+        List<HourlyWeather> hourlyWeatherToBeRemoved = new ArrayList<>();
+
+        for (HourlyWeather item : hourlyWeatherInDB) {
+            if (!hourlyWeatherInRequest.contains(item)) {
+                hourlyWeatherToBeRemoved.add(item.getShallowCopy());
+            }
+        }
+
+        for (HourlyWeather item : hourlyWeatherToBeRemoved) {
+            hourlyWeatherInDB.remove(item);
+        }
+        return (List<HourlyWeather>) hourlyWeatherRepo.saveAll(hourlyWeatherInRequest);
     }
 }

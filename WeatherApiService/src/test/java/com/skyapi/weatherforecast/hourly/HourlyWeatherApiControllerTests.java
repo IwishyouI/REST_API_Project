@@ -313,6 +313,7 @@ public class HourlyWeatherApiControllerTests {
         mockMvc.perform(put(requestURI).contentType(MediaType.APPLICATION_JSON).content(requestBody))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.location", is(location.toString())))
+                .andExpect(jsonPath("$.hourly_forecast[0].hour_of_day", is(10)))
                 .andDo(print());
 
     }
