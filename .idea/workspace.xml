@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="Section 1 complete">
+    <list default="true" id="da3a461c-8b7e-4c19-9244-14e4bf78e029" name="Changes" comment="entity2DTO dto2Entity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +240,7 @@
       <workItem from="1711955179888" duration="7030000" />
       <workItem from="1711964126156" duration="853000" />
       <workItem from="1712216229439" duration="3559000" />
-      <workItem from="1712221839736" duration="4458000" />
+      <workItem from="1712221839736" duration="5920000" />
     </task>
     <task id="LOCAL-00002" summary="Code Refactor 진행">
       <option name="closed" value="true" />
@@ -552,7 +554,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712224633548</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="entity2DTO dto2Entity">
+      <option name="closed" value="true" />
+      <created>1712227236160</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1712227236160</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="IP2Location 관련 코드 추가" />
     <MESSAGE value="RestTemplate으로 ListLocations 작동하는지 관련 코드 작성" />
     <MESSAGE value="IP2Location Test 관련 추가" />
     <MESSAGE value="RealTimeWeatherRepository 관련 테스트 코드 추가 및 IP Address 값 얻어오는 CommonUtility 추가" />
@@ -595,7 +604,8 @@
     <MESSAGE value="DailyWeather 부분 작성 중" />
     <MESSAGE value="HourlyWeatherApiController update 200 작성 및 테스트" />
     <MESSAGE value="Section 1 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 1 complete" />
+    <MESSAGE value="entity2DTO dto2Entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="entity2DTO dto2Entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

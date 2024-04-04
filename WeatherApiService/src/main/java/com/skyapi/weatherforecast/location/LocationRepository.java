@@ -17,6 +17,11 @@ public interface LocationRepository extends CrudRepository<Location, String>, Pa
 	@Query("select l from Location l where l.trashed = false ")
 	public List<Location> findUntrashed();
 
+
+	@Query("select l from Location l where l.trashed = false ")
+	public Page<Location> findUntrashed(Pageable pageable);
+
+
 	@Query("select l from Location l where l.trashed = false and l.code = ?1")
 	public Location findByCode(String code);
 

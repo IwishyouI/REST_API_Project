@@ -31,11 +31,11 @@ public class LocationApiController {
     }
 
     @PostMapping
-    public ResponseEntity<Location> addLocation(@RequestBody @Valid Location location) {
+    public ResponseEntity<LocationDTO> addLocation(@RequestBody @Valid Location location) {
         Location addLocation = service.add(location);
         URI uri = URI.create("/v1/locations/" + location.getCode());
 
-        return ResponseEntity.created(uri).body(addLocation);
+        return ResponseEntity.created(uri).body(entity2Dto(addLocation));
     }
 
     @GetMapping
@@ -48,6 +48,7 @@ public class LocationApiController {
         return ResponseEntity.ok(listEntity2Dto(list));
 
     }
+
 
     @GetMapping("/{code}")
     public ResponseEntity<?> getLocation(@PathVariable("code") String code) {
