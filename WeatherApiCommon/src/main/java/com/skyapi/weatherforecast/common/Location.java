@@ -16,21 +16,30 @@ import java.util.Objects;
 @Entity
 @Table(name = "locations")
 public class Location {
+
     @Column(length = 12, nullable = false, unique = true)
     @Id
+    @NotBlank
     private String code;
 
     @Column(length = 128, nullable = false)
-    @JsonProperty
+    @JsonProperty("city_name")
+    @NotBlank
     private String cityName;
 
+
     @Column(length = 128)
+    @JsonProperty("region_name")
+    @NotNull
     private String regionName;
 
     @Column(length = 64, nullable = false)
+    @JsonProperty("country_name")
+    @NotBlank
     private String countryName;
 
     @Column(length = 2, nullable = false)
+    @JsonProperty("country_code")
     private String countryCode;
 
     public Location() {
@@ -104,5 +113,19 @@ public class Location {
 
     public void setTrashed(boolean trashed) {
         this.trashed = trashed;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return Objects.equals(code, location.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code);
     }
 }
