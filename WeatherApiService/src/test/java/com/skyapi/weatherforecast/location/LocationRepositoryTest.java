@@ -27,17 +27,29 @@ public class LocationRepositoryTest {
     public void testAddSuccess() {
         Location location = new Location();
 
-        location.setCode("NYC_USA");
-        location.setCityName("New York City");
-        location.setRegionName("New York");
-        location.setCountryCode("US");
-        location.setCountryName("United States of America");
+        location.setCode("DELHI_IN");
+        location.setCityName("New Delhi");
+        location.setRegionName("Delhi");
+        location.setCountryCode("IN");
+        location.setCountryName("India");
         location.setEnabled(true);
+        location.setTrashed(false);
         Location savedLocation = repository.save(location);
 
         assertThat(savedLocation).isNotNull();
-        assertThat(savedLocation.getCode()).isEqualTo("NYC_USA");
+        assertThat(savedLocation.getCode()).isEqualTo("DELHI_IN");
 
+    }
+
+
+    @Test
+    public void testListSuccess() {
+
+
+        List<Location> locations = repository.findUntrashed();
+
+        assertThat(locations).isNotEmpty();
+        locations.forEach(System.out::println);
     }
 
 

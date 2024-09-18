@@ -8,6 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiCommon/src/main/java/com/skyapi/weatherforecast/common/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/main/java/com/skyapi/weatherforecast/location/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationApiControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApiService/src/test/java/com/skyapi/weatherforecast/location/LocationRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +40,15 @@
   "keyToString": {
     "JUnit.LocationApiControllerTests.testAddShouldReturn201Created.executor": "Run",
     "JUnit.LocationApiControllerTests.testAddShouldReturn400BadRequest.executor": "Run",
+    "JUnit.LocationApiControllerTests.testListShouldReturn204NoContent.executor": "Run",
+    "JUnit.LocationApiControllerTests.testListShouledReturn200Ok.executor": "Run",
     "JUnit.LocationRepositoryTest.executor": "Run",
     "JUnit.LocationRepositoryTest.testAddSuccess.executor": "Run",
+    "JUnit.LocationRepositoryTest.testListSuccess.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.WeatherApiServiceApplication.executor": "Run",
     "git-widget-placeholder": "TEST1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/dlwhd/OneDrive/문서/RestAPI_Project",
@@ -62,21 +70,8 @@
       <recent name="C:\Users\dlwhd\OneDrive\바탕 화면\RestAPI_Project\WeatherApiService" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationApiControllerTests.testAddShouldReturn201Created">
-    <configuration name="WeatherApiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocationApiControllerTests.testAddShouldReturn201Created" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LocationRepositoryTest.testAddSuccess">
+    <configuration name="LocationApiControllerTests.testListShouldReturn204NoContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +81,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testAddShouldReturn201Created" />
+      <option name="METHOD_NAME" value="testListShouldReturn204NoContent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationApiControllerTests.testAddShouldReturn400BadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationApiControllerTests.testListShouledReturn200Ok" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherApiService" />
       <extension name="coverage">
         <pattern>
@@ -102,23 +97,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
       <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationApiControllerTests" />
-      <option name="METHOD_NAME" value="testAddShouldReturn400BadRequest" />
+      <option name="METHOD_NAME" value="testListShouledReturn200Ok" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocationRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WeatherApiService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
-      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,20 +119,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LocationRepositoryTest.testListSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherApiService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.location.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.skyapi.weatherforecast.location" />
+      <option name="MAIN_CLASS_NAME" value="com.skyapi.weatherforecast.location.LocationRepositoryTest" />
+      <option name="METHOD_NAME" value="testListSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherApiServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="WeatherApiService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.skyapi.weatherforecast.WeatherApiServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.skyapi.weatherforecast.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.WeatherApiServiceApplication" />
-      <item itemvalue="JUnit.LocationApiControllerTests.testAddShouldReturn201Created" />
-      <item itemvalue="JUnit.LocationApiControllerTests.testAddShouldReturn400BadRequest" />
-      <item itemvalue="JUnit.LocationRepositoryTest" />
+      <item itemvalue="JUnit.LocationApiControllerTests.testListShouldReturn204NoContent" />
+      <item itemvalue="JUnit.LocationApiControllerTests.testListShouledReturn200Ok" />
+      <item itemvalue="JUnit.LocationRepositoryTest.testListSuccess" />
       <item itemvalue="JUnit.LocationRepositoryTest.testAddSuccess" />
+      <item itemvalue="Spring Boot.WeatherApiServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LocationApiControllerTests.testAddShouldReturn201Created" />
-        <item itemvalue="JUnit.LocationApiControllerTests.testAddShouldReturn400BadRequest" />
-        <item itemvalue="JUnit.LocationRepositoryTest" />
         <item itemvalue="JUnit.LocationRepositoryTest.testAddSuccess" />
-        <item itemvalue="Application.WeatherApiServiceApplication" />
+        <item itemvalue="JUnit.LocationApiControllerTests.testListShouledReturn200Ok" />
+        <item itemvalue="Spring Boot.WeatherApiServiceApplication" />
+        <item itemvalue="JUnit.LocationApiControllerTests.testListShouldReturn204NoContent" />
+        <item itemvalue="JUnit.LocationRepositoryTest.testListSuccess" />
       </list>
     </recent_temporary>
   </component>
