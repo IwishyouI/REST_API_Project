@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -21,9 +22,9 @@ public class LocationApiController {
     }
 
     @PostMapping
-    public ResponseEntity<Location> addLocation(@RequestBody Location location) {
+    public ResponseEntity<Location> addLocation(@RequestBody @Valid Location location) {
         Location addedLocation = service.add(location);
-        URI uri = URI.create("/v1/locations" + location.getCode());
+        URI uri = URI.create("/v1/locations/" + location.getCode());
 
         return ResponseEntity.created(uri).body(addedLocation);
     }

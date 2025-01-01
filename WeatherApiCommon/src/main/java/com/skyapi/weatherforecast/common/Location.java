@@ -19,21 +19,32 @@ public class Location {
 
     @Column(length = 12, nullable = false, unique = true)
     @Id
+    @NotBlank
     private String code;
 
     @Column(length = 128, nullable = false)
+    @JsonProperty("city_name")
+    @NotBlank
     private String cityName;
 
     @Column(length = 128, nullable = false)
+    @JsonProperty("region_name")
+    @NotBlank
     private String regionName;
 
     @Column(length = 64, nullable = false)
+    @JsonProperty("country_name")
+    @NotBlank
     private String countryName;
 
     @Column(length = 2, nullable = false)
+    @JsonProperty("country_code")
+    @NotBlank
     private String countryCode;
 
     private boolean enabled;
+
+    @JsonIgnore
     private boolean trashed;
 
     public Location() {
