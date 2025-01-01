@@ -16,4 +16,25 @@ import java.util.List;
 @Table(name = "locations")
 public class Location {
 
+
+    @Column(length = 12, nullable = false, unique = true)
+    private String code;
+
+    @Column(length = 128, nullable = false)
+    private String cityName;
+
+    @Column(length = 128, nullable = false)
+    private String regionName;
+
+    @Column(length = 64, nullable = false)
+    private String countryName;
+
+    @Column(length = 2, nullable = false)
+    private String countryCode;
+
+    private boolean enabled;
+    private boolean trashed;
+
+
+
 }
